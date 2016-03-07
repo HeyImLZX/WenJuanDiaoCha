@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.login:
-                showDatePickerDialog(view);
+
                 break;
             case R.id.invest:
                 Intent intent = new Intent(MainActivity.this,PersonInfoActivity.class);
@@ -52,8 +52,5 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void showDatePickerDialog(View v) {
-        DialogFragment newFragment = new DatePickerFragment();
-        newFragment.show(getSupportFragmentManager(), "datePicker");
-    }
+
 }

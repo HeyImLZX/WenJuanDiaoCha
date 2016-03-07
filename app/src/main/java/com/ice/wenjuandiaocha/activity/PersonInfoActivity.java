@@ -1,6 +1,7 @@
 package com.ice.wenjuandiaocha.activity;
 
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.ice.wenjuandiaocha.R;
+import com.ice.wenjuandiaocha.util.DatePickerFragment;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -109,6 +111,20 @@ public class PersonInfoActivity extends AppCompatActivity {
 
 
         sex.setOnItemSelectedListener(listener);
+        education.setOnItemSelectedListener(listener);
+        occupation.setOnItemSelectedListener(listener);
+        marriage.setOnItemSelectedListener(listener);
+        payment.setOnItemSelectedListener(listener);
+        home.setOnItemSelectedListener(listener);
+        economy.setOnItemSelectedListener(listener);
+        oldhelp.setOnItemSelectedListener(listener);
+
+        birthday.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePickerDialog(v);
+            }
+        });
 
     }
 
@@ -147,5 +163,8 @@ public class PersonInfoActivity extends AppCompatActivity {
         }
     };
 
-
+    public void showDatePickerDialog(View v) {
+        DialogFragment newFragment = new DatePickerFragment();
+        newFragment.show(getSupportFragmentManager(), "datePicker");
+    }
 }
