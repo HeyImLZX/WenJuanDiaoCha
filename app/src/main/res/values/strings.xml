@@ -1,0 +1,87 @@
+<resources>
+    <string name="app_name">WenJuanDiaoCha</string>
+
+    <string-array name="sex_array">
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+    <string-array name="religion_array">
+        <item>有</item>
+        <item>无</item>
+    </string-array>
+    <string-array name="education_array">
+        <item>文盲及半文盲</item>
+        <item>小学</item>
+        <item>初中</item>
+        <item>高中/技校/中专</item>
+        <item>大专及以上</item>
+        <item>不详</item>
+    </string-array>
+    <string-array name="occupation_array">
+        <item>国家机关/党群组织/企业/事业单位负责人</item>
+        <item>专业技术人员</item>
+        <item>办事人员和有关人员</item>
+        <item>商业、服务业人员</item>
+        <item>农林牧渔水利生产人员</item>
+        <item>生产、运输设备操作人员及有关人员</item>
+        <item>军人</item>
+        <item>不便分类的其他从业人员</item>
+    </string-array>
+    <string-array name="marriage_array">
+        <item>未婚</item>
+        <item>已婚</item>
+        <item>丧偶</item>
+        <item>离婚</item>
+        <item>未说明的婚姻状况</item>
+
+    </string-array>
+    <string-array name="payment_array">
+        <item>城镇职工基本医疗保险</item>
+        <item>城镇居民基本医疗保险</item>
+        <item>新型农村合作医疗</item>
+        <item>贫困救助</item>
+        <item>商业医疗保险</item>
+        <item>全公费</item>
+        <item>全自费</item>
+        <item>其他</item>
+    </string-array>
+    <string-array name="home_array">
+        <item>独居</item>
+        <item>与配偶/伴侣居住</item>
+        <item>与子女居住</item>
+        <item>与父母居住</item>
+        <item>与兄弟姐妹居住</item>
+        <item>与其他亲属居住</item>
+        <item>与非亲属关系的人居住</item>
+        <item>养老机构</item>
+    </string-array>
+    <string-array name="economy_array">
+        <item>退休金/养老金</item>
+        <item>子女补贴</item>
+        <item>亲友资助</item>
+        <item>其他补助</item>
+    </string-array>
+    <string-array name="oldhelp_array">
+        <item>无</item>
+        <item>配偶</item>
+        <item>子女</item>
+        <item>其他亲属</item>
+        <item>专职陪护人员</item>
+        <item>兼职陪护人员</item>
+        <item>义工</item>
+    </string-array>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+</resources>

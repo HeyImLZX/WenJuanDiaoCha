@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.ice.wenjuandiaocha.activity.PersonInfoActivity">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:columnCount="2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_margin_8"
+            android:layout_marginTop="@dimen/activity_margin_8"
+            android:text="姓        名" />
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="性        别" />
+
+        <Spinner
+            android:id="@+id/sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="出生日期" />
+
+        <TextView
+            android:id="@+id/birthday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="身        高" />
+
+        <EditText
+            android:id="@+id/height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="体        重" />
+
+        <EditText
+            android:id="@+id/weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="供  史  者" />
+
+        <EditText
+            android:id="@+id/provider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="关        系" />
+
+        <EditText
+            android:id="@+id/relation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="年        龄" />
+
+        <EditText
+            android:id="@+id/age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="宗教信仰" />
+
+        <EditText
+            android:id="@+id/religion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="身份证号" />
+
+        <EditText
+            android:id="@+id/idcard"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_margin_8"
+            android:layout_marginTop="@dimen/activity_margin_8"
+            android:text="文化程度" />
+
+        <Spinner
+            android:id="@+id/education"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_margin_8"
+            android:layout_marginTop="@dimen/activity_margin_8" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_margin_8"
+            android:layout_marginTop="@dimen/activity_margin_8"
+            android:text="曾从事职业" />
+
+        <Spinner
+            android:id="@+id/occupation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_margin_8"
+            android:layout_marginTop="@dimen/activity_margin_8" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_margin_8"
+            android:layout_marginTop="@dimen/activity_margin_8"
+            android:text="婚姻状况" />
+
+        <Spinner
+            android:id="@+id/marriage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_margin_8"
+            android:layout_marginTop="@dimen/activity_margin_8" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_margin_8"
+            android:layout_marginTop="@dimen/activity_margin_8"
+            android:maxEms="4"
+            android:text="医疗费用支付方式" />
+
+        <Spinner
+            android:id="@+id/payment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_margin_8"
+            android:layout_marginTop="@dimen/activity_margin_8" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_margin_8"
+            android:layout_marginTop="@dimen/activity_margin_8"
+            android:text="居住状况" />
+
+        <Spinner
+            android:id="@+id/home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_margin_8"
+            android:layout_marginTop="@dimen/activity_margin_8" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_margin_8"
+            android:layout_marginTop="@dimen/activity_margin_8"
+            android:text="经济来源" />
+
+        <Spinner
+            android:id="@+id/economy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_margin_8"
+            android:layout_marginTop="@dimen/activity_margin_8" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_margin_8"
+            android:layout_marginTop="@dimen/activity_margin_8"
+            android:maxEms="5"
+            android:text="入院前主要照顾人员" />
+
+        <Spinner
+            android:id="@+id/oldhelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_margin_8"
+            android:layout_marginTop="@dimen/activity_margin_8" />
+
+        <TextView
+            android:id="@+id/accident"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_margin_8"
+            android:layout_marginTop="@dimen/activity_margin_8"
+            android:maxEms="4"
+            android:text="近30天意外事件" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_margin_8"
+            android:layout_marginTop="@dimen/activity_margin_8" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:text="医疗意愿" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2">
+
+            <AutoCompleteTextView
+                android:id="@+id/wish1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="如果自己不能表达时，是否有医疗代理人"
+                />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2" >
+
+            <EditText
+                android:id="@+id/wish2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="对生命支持治疗的选择倾向？"
+              />
+        </android.support.design.widget.TextInputLayout>
+    </GridLayout>
+</ScrollView>

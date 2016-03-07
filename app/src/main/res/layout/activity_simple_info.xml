@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="2"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.ice.wenjuandiaocha.activity.SimpleInfoActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="2"
+        android:text="1.营养" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="过去三个月您的体重是否有减轻>5%" />
+
+
+
+    <CheckBox
+        android:id="@+id/one_one"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:text="有" />
+    <include layout="@layout/mna_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="2"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="摄入量有无减少" />
+    <CheckBox
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:text="有" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BMI 18.5" />
+    <CheckBox
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:text="有" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="2"
+        android:text="2.牙齿" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="牙齿及牙龈、咀嚼能力评估" />
+    <CheckBox
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:text="有" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="呛咳" />
+    <CheckBox
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:text="有" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="2"
+        android:text="3.听力" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="在病人侧方距耳朵15-30cm处轻声说话" />
+    <CheckBox
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:text="有" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="听力测量仪设定在40分贝，测定1000及2000Hz时的听力" />
+    <CheckBox
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:text="有" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="2"
+        android:text="3.视力" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="在病人侧方距耳朵15-30cm处轻声说话" />
+    <CheckBox
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:text="有" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="听力测量仪设定在40分贝，测定1000及2000Hz时的听力" />
+    <CheckBox
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:text="有" />
+
+
+
+</GridLayout>
