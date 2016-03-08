@@ -1,5 +1,6 @@
 package com.ice.wenjuandiaocha.activity;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -20,7 +22,7 @@ import butterknife.OnClick;
 import butterknife.OnItemClick;
 import butterknife.OnItemSelected;
 
-public class PersonInfoActivity extends AppCompatActivity {
+public class PersonInfoActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
     @Bind(R.id.name)
     EditText name;
@@ -62,6 +64,7 @@ public class PersonInfoActivity extends AppCompatActivity {
     EditText wish1;
     @Bind(R.id.wish2)
     EditText wish2;
+    private DatePickerFragment newFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -164,7 +167,16 @@ public class PersonInfoActivity extends AppCompatActivity {
     };
 
     public void showDatePickerDialog(View v) {
-        DialogFragment newFragment = new DatePickerFragment();
+        newFragment = new DatePickerFragment();
         newFragment.show(getSupportFragmentManager(), "datePicker");
+
+    }
+
+    @Override
+    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+        String result = year + "-" + monthOfYear + "-" + dayOfMonth;
+
+        birthday.setText(result);
+
     }
 }
