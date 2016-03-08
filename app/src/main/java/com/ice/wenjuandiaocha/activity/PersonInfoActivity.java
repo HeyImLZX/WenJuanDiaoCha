@@ -1,13 +1,14 @@
 package com.ice.wenjuandiaocha.activity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -16,11 +17,10 @@ import android.widget.TextView;
 import com.ice.wenjuandiaocha.R;
 import com.ice.wenjuandiaocha.util.DatePickerFragment;
 
+import java.util.HashMap;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
-import butterknife.OnItemClick;
-import butterknife.OnItemSelected;
 
 public class PersonInfoActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
@@ -64,6 +64,8 @@ public class PersonInfoActivity extends AppCompatActivity implements DatePickerD
     EditText wish1;
     @Bind(R.id.wish2)
     EditText wish2;
+    @Bind(R.id.add)
+    Button add;
     private DatePickerFragment newFragment;
 
     @Override
@@ -129,35 +131,42 @@ public class PersonInfoActivity extends AppCompatActivity implements DatePickerD
             }
         });
 
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PersonInfoActivity.this, SimpleInfoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
-
-
 
 
     AdapterView.OnItemSelectedListener listener = new AdapterView.OnItemSelectedListener() {
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        switch (parent.getId()) {
-            case R.id.sex:
-                Log.e("dddd", "ddddddddddddddddddddddddddddddddddddddddddddd");
-                break;
-            case R.id.birthday:
-                break;
-            case R.id.education:
-                break;
-            case R.id.occupation:
-                break;
-            case R.id.marriage:
-                break;
-            case R.id.payment:
-                break;
-            case R.id.home:
-                break;
-            case R.id.economy:
-                break;
-            case R.id.oldhelp:
-                break;
-        }
+            switch (parent.getId()) {
+                case R.id.sex:
+                    Log.e("dddd", "ddddddddddddddddddddddddddddddddddddddddddddd" + position);
+                    break;
+                case R.id.education:
+                    Log.e("dddd", "ddddddddddddddddddddddddddddddddddddddddddddd" + position);
+                    break;
+                case R.id.occupation:
+                    Log.e("dddd", "ddddddddddddddddddddddddddddddddddddddddddddd" + position);
+                    break;
+                case R.id.marriage:
+                    break;
+                case R.id.payment:
+                    break;
+                case R.id.home:
+                    break;
+                case R.id.economy:
+                    break;
+                case R.id.oldhelp:
+                    break;
+            }
         }
 
         @Override

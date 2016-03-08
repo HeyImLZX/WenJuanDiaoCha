@@ -138,6 +138,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/activity_margin_8"
+
             android:layout_marginTop="@dimen/activity_margin_8" />
 
         <TextView
@@ -272,5 +273,12 @@
                 android:hint="对生命支持治疗的选择倾向？"
               />
         </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="match_parent"
+            android:layout_columnSpan="2"
+            android:layout_height="wrap_content"
+            android:text="下一页" />
     </GridLayout>
 </ScrollView>
