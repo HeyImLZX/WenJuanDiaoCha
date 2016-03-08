@@ -28,7 +28,8 @@
             android:layout_width="match_parent" />
 
         <TextView
-
+            android:layout_marginBottom="@dimen/activity_margin_8"
+            android:layout_marginTop="@dimen/activity_margin_8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="性        别" />
@@ -39,7 +40,8 @@
             android:layout_height="wrap_content" />
 
         <TextView
-
+            android:layout_marginBottom="@dimen/activity_margin_8"
+            android:layout_marginTop="@dimen/activity_margin_8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="出生日期" />
@@ -51,6 +53,8 @@
             android:text="1990-1-1" />
 
         <TextView
+            android:layout_marginBottom="@dimen/activity_margin_8"
+            android:layout_marginTop="@dimen/activity_margin_8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="身        高" />
@@ -59,10 +63,12 @@
             android:id="@+id/height"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:hint="单位：cm" />
 
         <TextView
-
+            android:layout_marginBottom="@dimen/activity_margin_8"
+            android:layout_marginTop="@dimen/activity_margin_8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="体        重" />
@@ -71,10 +77,12 @@
             android:id="@+id/weight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:hint="单位：kg" />
 
         <TextView
-
+            android:layout_marginBottom="@dimen/activity_margin_8"
+            android:layout_marginTop="@dimen/activity_margin_8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="供  史  者" />
@@ -85,6 +93,8 @@
             android:layout_height="wrap_content" />
 
         <TextView
+            android:layout_marginBottom="@dimen/activity_margin_8"
+            android:layout_marginTop="@dimen/activity_margin_8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="关        系" />
@@ -95,6 +105,8 @@
             android:layout_height="wrap_content" />
 
         <TextView
+            android:layout_marginBottom="@dimen/activity_margin_8"
+            android:layout_marginTop="@dimen/activity_margin_8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="年        龄" />
@@ -106,6 +118,8 @@
             android:inputType="numberDecimal" />
 
         <TextView
+            android:layout_marginBottom="@dimen/activity_margin_8"
+            android:layout_marginTop="@dimen/activity_margin_8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="宗教信仰" />
@@ -116,6 +130,8 @@
             android:layout_height="wrap_content" />
 
         <TextView
+            android:layout_marginBottom="@dimen/activity_margin_8"
+            android:layout_marginTop="@dimen/activity_margin_8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="身份证号" />
@@ -137,6 +153,7 @@
             android:id="@+id/education"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:minWidth="400dp"
             android:layout_marginBottom="@dimen/activity_margin_8"
 
             android:layout_marginTop="@dimen/activity_margin_8" />
@@ -150,6 +167,7 @@
 
         <Spinner
             android:id="@+id/occupation"
+            android:minWidth="400dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/activity_margin_8"
@@ -165,6 +183,7 @@
         <Spinner
             android:id="@+id/marriage"
             android:layout_width="wrap_content"
+            android:minWidth="400dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/activity_margin_8"
             android:layout_marginTop="@dimen/activity_margin_8" />
@@ -180,6 +199,7 @@
         <Spinner
             android:id="@+id/payment"
             android:layout_width="wrap_content"
+            android:minWidth="400dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/activity_margin_8"
             android:layout_marginTop="@dimen/activity_margin_8" />
@@ -194,6 +214,7 @@
         <Spinner
             android:id="@+id/home"
             android:layout_width="wrap_content"
+            android:minWidth="400dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/activity_margin_8"
             android:layout_marginTop="@dimen/activity_margin_8" />
@@ -207,6 +228,7 @@
 
         <Spinner
             android:id="@+id/economy"
+            android:minWidth="400dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/activity_margin_8"
@@ -224,6 +246,7 @@
             android:id="@+id/oldhelp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:minWidth="400dp"
             android:layout_marginBottom="@dimen/activity_margin_8"
             android:layout_marginTop="@dimen/activity_margin_8" />
 
@@ -279,7 +302,10 @@
             android:id="@+id/add"
             android:layout_width="match_parent"
             android:layout_columnSpan="2"
+            android:background="@color/colorLightBlue"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:padding="@dimen/activity_vertical_margin"
             android:text="下一页" />
     </GridLayout>
 </ScrollView>

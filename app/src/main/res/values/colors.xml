@@ -23,5 +23,7 @@
     <color name="colorLightLightBlue">#00cccc</color>
     <color name="colorLightPink">#ff7066</color>
     <color name="colorLightGrass">#8cc63f</color>
-    <color name="accent_material_light">#002699</color>
+    <color name="accent_material_light">#00b8ec</color>
+    <color name="primary_dark_material_dark">#00b8ec</color>
+    <color name="primary_material_dark">#00b8ec</color>
 </resources>

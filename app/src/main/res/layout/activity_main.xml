@@ -21,13 +21,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="登陆" />
+            android:text="登        陆"
+            android:padding="40dp"
+            android:layout_margin="1dp"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorLightBlue"
+            android:textSize="@dimen/huge_char" />
 
         <Button
             android:id="@+id/invest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="填写问卷" />
+            android:padding="40dp"
+            android:layout_margin="1dp"
+            android:text="填写问卷"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorLightBlue"
+            android:textSize="@dimen/huge_char" />
     </LinearLayout>
 
     <LinearLayout
@@ -37,15 +47,25 @@
 
         <Button
             android:id="@+id/upload"
+            android:textSize="@dimen/huge_char"
             android:layout_width="wrap_content"
+            android:layout_margin="1dp"
             android:layout_height="wrap_content"
-            android:text="上传" />
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorLightBlue"
+            android:padding="40dp"
+            android:text="上        传" />
 
         <Button
             android:id="@+id/exit"
+            android:textSize="@dimen/huge_char"
             android:layout_width="wrap_content"
+            android:layout_margin="1dp"
+            android:padding="40dp"
             android:layout_height="wrap_content"
-            android:text="退出" />
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorLightBlue"
+            android:text="退        出" />
 
     </LinearLayout>
 </LinearLayout>

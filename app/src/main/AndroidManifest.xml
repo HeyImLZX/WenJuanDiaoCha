@@ -24,7 +24,8 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
-        <activity android:name=".activity.SimpleInfoActivity"></activity>
+        <activity android:name=".activity.SimpleInfoActivity" />
+        <activity android:name=".activity.WaTianActivity"></activity>
     </application>
 
 </manifest>

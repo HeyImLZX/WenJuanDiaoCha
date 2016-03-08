@@ -15,6 +15,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ice.greendao.DaoMaster;
 import com.ice.greendao.DaoSession;
@@ -154,35 +155,48 @@ public class PersonInfoActivity extends AppCompatActivity implements DatePickerD
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (name.getText().toString().isEmpty()
+                        || height.getText().toString().isEmpty()
+                        || weight.getText().toString().isEmpty()
+                        || provider.getText().toString().isEmpty()
+                        || relation.getText().toString().isEmpty()
+                        || religion.getText().toString().isEmpty()
+                        || idcard.getText().toString().isEmpty()) {
+                    Toast.makeText(PersonInfoActivity.this, "请完整填写信息", Toast.LENGTH_SHORT).show();
+                } else {
+                    insertDao();
 
-                // 插入操作，简单到只要你创建一个 Java 对象
-                PersonInfo note = new PersonInfo(null, name.getText().toString(), sex.getSelectedItem().toString(), birthday.getText().toString()
-                        , height.getText().toString()
-                        , weight.getText().toString()
-                        , provider.getText().toString()
-                        , relation.getText().toString()
-                        , religion.getText().toString()
-                        , idcard.getText().toString()
-                        , education.getSelectedItem().toString()
-                        , occupation.getSelectedItem().toString()
-                        , marriage.getSelectedItem().toString()
-                        , payment.getSelectedItem().toString()
-                        , home.getSelectedItem().toString()
-                        , economy.getSelectedItem().toString()
-                        , oldhelp.getSelectedItem().toString()
-                        , accident.getText().toString()
-                        , wish1.getText().toString()
-                        , wish2.getText().toString());
-                getPersonInfoDao().insert(note);
-                Log.d(TAG, "Inserted new note, ID: " + note.getId());
-                cursor.requery();
-
-                Intent intent = new Intent(PersonInfoActivity.this, SimpleInfoActivity.class);
-                startActivity(intent);
+                    Intent intent = new Intent(PersonInfoActivity.this, SimpleInfoActivity.class);
+                    startActivity(intent);
+                }
             }
         });
 
 
+    }
+
+    public void insertDao() {
+        // 插入操作，简单到只要你创建一个 Java 对象
+        PersonInfo note = new PersonInfo(null, name.getText().toString(), sex.getSelectedItem().toString(), birthday.getText().toString()
+                , height.getText().toString()
+                , weight.getText().toString()
+                , provider.getText().toString()
+                , relation.getText().toString()
+                , religion.getText().toString()
+                , idcard.getText().toString()
+                , education.getSelectedItem().toString()
+                , occupation.getSelectedItem().toString()
+                , marriage.getSelectedItem().toString()
+                , payment.getSelectedItem().toString()
+                , home.getSelectedItem().toString()
+                , economy.getSelectedItem().toString()
+                , oldhelp.getSelectedItem().toString()
+                , accident.getText().toString()
+                , wish1.getText().toString()
+                , wish2.getText().toString());
+        getPersonInfoDao().insert(note);
+        Log.d(TAG, "Inserted new note, ID: " + note.getId());
+        cursor.requery();
     }
 
     private void setupDatabase() {
