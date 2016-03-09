@@ -12,6 +12,7 @@
 
     <TextView
         android:layout_width="wrap_content"
+        android:padding="@dimen/activity_margin_8"
         android:layout_height="wrap_content"
         android:text="患者端坐，喝下30ml温开水，观察所需时间和呛咳情况" />
 
@@ -24,23 +25,27 @@
             android:id="@+id/wt_btn1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
             android:text="能够顺利地1次将水咽下" />
 
         <RadioButton
             android:id="@+id/wt_btn2"
             android:layout_width="wrap_content"
+            android:padding="@dimen/activity_margin_8"
             android:layout_height="wrap_content"
             android:text="分两次以上，能不呛咳的咽下" />
 
         <RadioButton
             android:id="@+id/wt_btn3"
             android:layout_width="wrap_content"
+            android:padding="@dimen/activity_margin_8"
             android:layout_height="wrap_content"
             android:text="能一次咽下，但有呛咳" />
 
         <RadioButton
             android:id="@+id/wt_btn4"
             android:layout_width="wrap_content"
+            android:padding="@dimen/activity_margin_8"
             android:layout_height="wrap_content"
             android:text="分两次以上咽下，但有呛咳" />
 
@@ -48,7 +53,19 @@
             android:id="@+id/wt_btn5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
             android:text="频繁呛咳，不能全部咽下" />
 
     </RadioGroup>
+
+    <Button
+        android:layout_marginTop="@dimen/activity_margin_32"
+        android:id="@+id/add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="2"
+        android:background="@color/colorLightBlue"
+        android:padding="@dimen/activity_vertical_margin"
+        android:text="填写完成"
+        android:textColor="@color/colorWhite" />
 </LinearLayout>

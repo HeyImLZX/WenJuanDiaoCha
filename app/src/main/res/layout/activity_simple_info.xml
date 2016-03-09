@@ -79,7 +79,7 @@
             android:layout_columnSpan="2"
             android:background="@color/colorLightBlue"
             android:padding="@dimen/activity_vertical_margin"
-            android:text="测试完成"
+            android:text="详细测试"
             android:textColor="@color/colorWhite"
             android:visibility="gone" />
 
@@ -130,7 +130,7 @@
             android:layout_columnSpan="2"
             android:background="@color/colorLightBlue"
             android:padding="@dimen/activity_vertical_margin"
-            android:text="测试完成"
+            android:text="详细测试"
             android:textColor="@color/colorWhite"
             android:visibility="gone" />
 
@@ -275,7 +275,7 @@
             android:layout_columnSpan="2"
             android:background="@color/colorLightBlue"
             android:padding="@dimen/activity_vertical_margin"
-            android:text="测试完成"
+            android:text="详细测试"
             android:textColor="@color/colorWhite"
             android:visibility="gone" />
 
@@ -349,7 +349,7 @@
             android:layout_columnSpan="2"
             android:background="@color/colorLightBlue"
             android:padding="@dimen/activity_vertical_margin"
-            android:text="测试完成"
+            android:text="详细测试"
             android:textColor="@color/colorWhite"
             android:visibility="gone" />
 
@@ -415,7 +415,7 @@
             android:layout_columnSpan="2"
             android:background="@color/colorLightBlue"
             android:padding="@dimen/activity_vertical_margin"
-            android:text="测试完成"
+            android:text="详细测试"
             android:textColor="@color/colorWhite"
             android:visibility="gone" />
 
@@ -465,7 +465,7 @@
             android:layout_columnSpan="2"
             android:background="@color/colorLightBlue"
             android:padding="@dimen/activity_vertical_margin"
-            android:text="测试完成"
+            android:text="详细测试"
             android:textColor="@color/colorWhite"
             android:visibility="gone" />
 
@@ -547,7 +547,7 @@
             android:layout_columnSpan="2"
             android:background="@color/colorLightBlue"
             android:padding="@dimen/activity_vertical_margin"
-            android:text="测试完成"
+            android:text="详细测试"
             android:textColor="@color/colorWhite"
             android:visibility="gone" />
 
