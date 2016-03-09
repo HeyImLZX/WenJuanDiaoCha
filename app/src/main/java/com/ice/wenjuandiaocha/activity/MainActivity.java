@@ -37,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.login:
-
+                Intent intent3 = new Intent(MainActivity.this, WaTianActivity.class);
+                startActivity(intent3);
                 break;
             case R.id.invest:
                 Intent intent = new Intent(MainActivity.this,PersonInfoActivity.class);

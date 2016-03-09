@@ -1,128 +1,565 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:columnCount="2"
+
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.ice.wenjuandiaocha.activity.SimpleInfoActivity">
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_columnSpan="2"
-        android:text="1.营养" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="过去三个月您的体重是否有减轻>5%" />
-
-
-
-    <CheckBox
-        android:id="@+id/one_one"
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
-        android:text="有" />
-    <include layout="@layout/mna_layout"
+    <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_columnSpan="2"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="摄入量有无减少" />
-    <CheckBox
-        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
 
-        android:layout_height="wrap_content"
-        android:text="有" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="BMI 18.5" />
-    <CheckBox
-        android:layout_width="wrap_content"
+        android:columnCount="2">
 
-        android:layout_height="wrap_content"
-        android:text="有" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:text="1.营养" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_columnSpan="2"
-        android:text="2.牙齿" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="牙齿及牙龈、咀嚼能力评估" />
-    <CheckBox
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
-        android:text="有" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="呛咳" />
-    <CheckBox
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
-        android:text="有" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_columnSpan="2"
-        android:text="3.听力" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="在病人侧方距耳朵15-30cm处轻声说话" />
-    <CheckBox
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
-        android:text="有" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="听力测量仪设定在40分贝，测定1000及2000Hz时的听力" />
-    <CheckBox
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
-        android:text="有" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_columnSpan="2"
-        android:text="3.视力" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="在病人侧方距耳朵15-30cm处轻声说话" />
-    <CheckBox
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
-        android:text="有" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="听力测量仪设定在40分贝，测定1000及2000Hz时的听力" />
-    <CheckBox
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
-        android:text="有" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="过去三个月您的体重是否有减轻>5%" />
 
 
+        <CheckBox
+            android:id="@+id/one_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
 
-</GridLayout>
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="摄入量有无减少" />
+
+        <CheckBox
+            android:id="@+id/one_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BMI小于18.5" />
+
+        <CheckBox
+            android:id="@+id/one_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <Button
+            android:id="@+id/detail1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:background="@color/colorLightBlue"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="测试完成"
+            android:textColor="@color/colorWhite"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:paddingTop="@dimen/activity_margin_32"
+            android:text="2.牙齿" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="牙齿及牙龈、咀嚼能力评估" />
+
+        <CheckBox
+            android:id="@+id/two_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="呛咳" />
+
+
+        <CheckBox
+            android:id="@+id/two_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <Button
+            android:id="@+id/detail2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:background="@color/colorLightBlue"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="测试完成"
+            android:textColor="@color/colorWhite"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:paddingTop="@dimen/activity_margin_32"
+            android:text="3.听力" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="在病人侧方距耳朵15-30cm处轻声说话" />
+
+        <CheckBox
+            android:id="@+id/three_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="听力测量仪设定在40分贝，测定1000及2000Hz时的听力" />
+
+        <CheckBox
+            android:id="@+id/three_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:paddingTop="@dimen/activity_margin_32"
+            android:text="4.视力" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="您从事日常活动（看电视、看书报，会因为视力不佳而受影响吗？）" />
+
+        <CheckBox
+            android:id="@+id/four_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="视力量表检查" />
+
+        <CheckBox
+            android:id="@+id/four_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:paddingTop="@dimen/activity_margin_32"
+            android:text="5.尿失禁" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="在过去一年中，您是否有不自主渗尿而弄湿裤子的情形？" />
+
+        <CheckBox
+            android:id="@+id/five_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="不由自主的漏尿天数是否超过6天以上？" />
+
+        <CheckBox
+            android:id="@+id/five_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="夜尿是否大于2次" />
+
+        <CheckBox
+            android:id="@+id/five_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <Button
+            android:id="@+id/detail5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:background="@color/colorLightBlue"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="测试完成"
+            android:textColor="@color/colorWhite"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:paddingTop="@dimen/activity_margin_32"
+            android:text="6.便秘" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="排便次数和性状？" />
+
+        <CheckBox
+            android:id="@+id/six_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="是否费力、费时？" />
+
+        <CheckBox
+            android:id="@+id/six_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:paddingTop="@dimen/activity_margin_32"
+            android:text="7.慢性疼痛" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="疼痛的部位" />
+
+        <CheckBox
+            android:id="@+id/seven_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <Button
+            android:id="@+id/detail7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:background="@color/colorLightBlue"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="测试完成"
+            android:textColor="@color/colorWhite"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:paddingTop="@dimen/activity_margin_32"
+            android:text="8.睡眠" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="睡眠情况：入睡难、早醒、易醒" />
+
+        <CheckBox
+            android:id="@+id/eight_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="睡眠时间、次日疲劳感" />
+
+        <CheckBox
+            android:id="@+id/eight_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="打鼾" />
+
+        <CheckBox
+            android:id="@+id/eight_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <Button
+            android:id="@+id/detail8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:background="@color/colorLightBlue"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="测试完成"
+            android:textColor="@color/colorWhite"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:paddingTop="@dimen/activity_margin_32"
+            android:text="9.跌倒" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="近1年内有无跌倒史" />
+
+        <CheckBox
+            android:id="@+id/nine_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="询问和观察有无步态异常" />
+
+        <CheckBox
+            android:id="@+id/nine_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <Button
+            android:id="@+id/detail9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:background="@color/colorLightBlue"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="测试完成"
+            android:textColor="@color/colorWhite"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:paddingTop="@dimen/activity_margin_32"
+            android:text="10.谵妄" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="急性病程和波动性病程" />
+
+        <CheckBox
+            android:id="@+id/ten_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注意力不集中" />
+
+        <CheckBox
+            android:id="@+id/ten_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="思维混乱" />
+
+        <CheckBox
+            android:id="@+id/ten_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="意识改变" />
+
+        <CheckBox
+            android:id="@+id/ten_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <Button
+            android:id="@+id/detail10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:background="@color/colorLightBlue"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="测试完成"
+            android:textColor="@color/colorWhite"
+            android:visibility="gone" />
+
+        <Button
+            android:layout_marginTop="@dimen/activity_margin_32"
+            android:id="@+id/add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:background="@color/colorLightBlue"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="测试完成"
+            android:textColor="@color/colorWhite" />
+    </GridLayout>
+</ScrollView>

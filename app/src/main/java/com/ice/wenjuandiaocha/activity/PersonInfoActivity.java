@@ -8,9 +8,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -24,10 +25,9 @@ import com.ice.greendao.PersonInfoDao;
 import com.ice.wenjuandiaocha.R;
 import com.ice.wenjuandiaocha.util.DatePickerFragment;
 
-import java.util.HashMap;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnCheckedChanged;
 
 public class PersonInfoActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
@@ -66,14 +66,21 @@ public class PersonInfoActivity extends AppCompatActivity implements DatePickerD
     Spinner economy;
     @Bind(R.id.oldhelp)
     Spinner oldhelp;
-    @Bind(R.id.accident)
-    TextView accident;
+
     @Bind(R.id.wish1)
     EditText wish1;
     @Bind(R.id.wish2)
     EditText wish2;
     @Bind(R.id.add)
     Button add;
+    @Bind(R.id.accident1)
+    CheckBox accident1;
+    @Bind(R.id.accident2)
+    CheckBox accident2;
+    @Bind(R.id.accident3)
+    CheckBox accident3;
+    @Bind(R.id.accident4)
+    CheckBox accident4;
     private DatePickerFragment newFragment;
 
     private SQLiteDatabase db;
@@ -173,9 +180,35 @@ public class PersonInfoActivity extends AppCompatActivity implements DatePickerD
         });
 
 
+
     }
 
+
     public void insertDao() {
+
+        boolean flag = false;
+        StringBuffer accidentResult = new StringBuffer("无");
+        if (accident1.isChecked()) {
+            accidentResult.append(accident1.getText().toString() + "/");
+            flag = true;
+        }
+        if (accident2.isChecked()) {
+            accidentResult.append(accident2.getText().toString() + "/");
+            flag = true;
+        }
+        if (accident3.isChecked()) {
+            accidentResult.append(accident3.getText().toString() + "/");
+            flag = true;
+        }
+        if (accident4.isChecked()) {
+            accidentResult.append(accident4.getText().toString() + "/");
+            flag = true;
+        }
+        if (flag) {
+            accidentResult.deleteCharAt(accidentResult.length() - 1);
+            accidentResult.deleteCharAt(0);
+        }
+
         // 插入操作，简单到只要你创建一个 Java 对象
         PersonInfo note = new PersonInfo(null, name.getText().toString(), sex.getSelectedItem().toString(), birthday.getText().toString()
                 , height.getText().toString()
@@ -191,7 +224,7 @@ public class PersonInfoActivity extends AppCompatActivity implements DatePickerD
                 , home.getSelectedItem().toString()
                 , economy.getSelectedItem().toString()
                 , oldhelp.getSelectedItem().toString()
-                , accident.getText().toString()
+                , accidentResult.toString()
                 , wish1.getText().toString()
                 , wish2.getText().toString());
         getPersonInfoDao().insert(note);
@@ -247,6 +280,7 @@ public class PersonInfoActivity extends AppCompatActivity implements DatePickerD
 //
 //        }
 //    };
+
 
     public void showDatePickerDialog(View v) {
         newFragment = new DatePickerFragment();
