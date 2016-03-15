@@ -17,7 +17,7 @@ import com.ice.greendao.PersonInfoDao;
 
 /**
  * {@inheritDoc}
- *
+ * 
  * @see de.greenrobot.dao.AbstractDaoSession
  */
 public class DaoSession extends AbstractDaoSession {

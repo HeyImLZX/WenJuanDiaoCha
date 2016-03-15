@@ -2,7 +2,6 @@ package com.ice.wenjuandiaocha.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -11,13 +10,14 @@ import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import com.ice.wenjuandiaocha.R;
+import com.ice.wenjuandiaocha.base.BaseBackActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
 
-public class SimpleInfoActivity extends AppCompatActivity {
+public class SimpleInfoBackActivity extends BaseBackActivity {
 
 
     @Bind(R.id.one_one)
@@ -101,6 +101,7 @@ public class SimpleInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_simple_info);
         ButterKnife.bind(this);
 
+        ;
 
     }
 
@@ -237,39 +238,40 @@ public class SimpleInfoActivity extends AppCompatActivity {
         Intent intent;
         switch (view.getId()) {
             case R.id.detail1:
-                intent = new Intent(SimpleInfoActivity.this, WaTianActivity.class);
+                intent = new Intent(SimpleInfoBackActivity.this, WaTianBackActivity.class);
                 startActivityForResult(intent, 1);
                 break;
             case R.id.detail2:
-                intent = new Intent(SimpleInfoActivity.this, WaTianActivity.class);
+                intent = new Intent(SimpleInfoBackActivity.this, WaTianBackActivity.class);
                 startActivityForResult(intent, 2);
                 break;
             case R.id.detail5:
-                intent = new Intent(SimpleInfoActivity.this, WaTianActivity.class);
+                intent = new Intent(SimpleInfoBackActivity.this, WaTianBackActivity.class);
                 startActivityForResult(intent, 5);
                 break;
             case R.id.detail7:
-                intent = new Intent(SimpleInfoActivity.this, WaTianActivity.class);
+                intent = new Intent(SimpleInfoBackActivity.this, WaTianBackActivity.class);
                 startActivityForResult(intent, 7);
                 break;
             case R.id.detail8:
-                intent = new Intent(SimpleInfoActivity.this, WaTianActivity.class);
+                intent = new Intent(SimpleInfoBackActivity.this, WaTianBackActivity.class);
                 startActivityForResult(intent, 8);
                 break;
             case R.id.detail9:
-                intent = new Intent(SimpleInfoActivity.this, WaTianActivity.class);
+                intent = new Intent(SimpleInfoBackActivity.this, WaTianBackActivity.class);
                 startActivityForResult(intent, 9);
                 break;
             case R.id.detail10:
-                intent = new Intent(SimpleInfoActivity.this, WaTianActivity.class);
+                intent = new Intent(SimpleInfoBackActivity.this, WaTianBackActivity.class);
                 startActivityForResult(intent, 10);
                 break;
             case R.id.add:
                 if (detail_count > 0)
-                    Toast.makeText(SimpleInfoActivity.this, "请填写完详细调查", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SimpleInfoBackActivity.this, "请填写完详细调查", Toast.LENGTH_SHORT).show();
                 else {
                     Toast.makeText(getApplicationContext(), "问卷填写完成", Toast.LENGTH_SHORT).show();
-                    finish();
+                    intent = new Intent(SimpleInfoBackActivity.this, MainBackActivity.class);
+                    startActivity(intent);
                 }
                 break;
         }

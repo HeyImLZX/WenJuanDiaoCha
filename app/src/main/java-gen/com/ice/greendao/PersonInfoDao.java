@@ -61,7 +61,7 @@ public class PersonInfoDao extends AbstractDao<PersonInfo, Long> {
      * Creates the underlying database table.
      */
     public static void createTable(SQLiteDatabase db, boolean ifNotExists) {
-        String constraint = ifNotExists ? "IF NOT EXISTS " : "";
+        String constraint = ifNotExists ? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"PERSON_INFO\" (" + //
                 "\"_id\" INTEGER PRIMARY KEY ," + // 0: id
                 "\"NAME\" TEXT NOT NULL ," + // 1: name
@@ -85,129 +85,121 @@ public class PersonInfoDao extends AbstractDao<PersonInfo, Long> {
                 "\"WISH2\" TEXT);"); // 19: wish2
     }
 
-    /**
-     * Drops the underlying database table.
-     */
+    /** Drops the underlying database table. */
     public static void dropTable(SQLiteDatabase db, boolean ifExists) {
         String sql = "DROP TABLE " + (ifExists ? "IF EXISTS " : "") + "\"PERSON_INFO\"";
         db.execSQL(sql);
     }
 
-    /**
-     * @inheritdoc
-     */
+    /** @inheritdoc */
     @Override
     protected void bindValues(SQLiteStatement stmt, PersonInfo entity) {
         stmt.clearBindings();
-
+ 
         Long id = entity.getId();
         if (id != null) {
             stmt.bindLong(1, id);
         }
         stmt.bindString(2, entity.getName());
-
+ 
         String sex = entity.getSex();
         if (sex != null) {
             stmt.bindString(3, sex);
         }
-
+ 
         String birthday = entity.getBirthday();
         if (birthday != null) {
             stmt.bindString(4, birthday);
         }
-
+ 
         String height = entity.getHeight();
         if (height != null) {
             stmt.bindString(5, height);
         }
-
+ 
         String weight = entity.getWeight();
         if (weight != null) {
             stmt.bindString(6, weight);
         }
-
+ 
         String provider = entity.getProvider();
         if (provider != null) {
             stmt.bindString(7, provider);
         }
-
+ 
         String relation = entity.getRelation();
         if (relation != null) {
             stmt.bindString(8, relation);
         }
-
+ 
         String religion = entity.getReligion();
         if (religion != null) {
             stmt.bindString(9, religion);
         }
-
+ 
         String idcard = entity.getIdcard();
         if (idcard != null) {
             stmt.bindString(10, idcard);
         }
-
+ 
         String education = entity.getEducation();
         if (education != null) {
             stmt.bindString(11, education);
         }
-
+ 
         String occupation = entity.getOccupation();
         if (occupation != null) {
             stmt.bindString(12, occupation);
         }
-
+ 
         String marriage = entity.getMarriage();
         if (marriage != null) {
             stmt.bindString(13, marriage);
         }
-
+ 
         String payment = entity.getPayment();
         if (payment != null) {
             stmt.bindString(14, payment);
         }
-
+ 
         String home = entity.getHome();
         if (home != null) {
             stmt.bindString(15, home);
         }
-
+ 
         String economy = entity.getEconomy();
         if (economy != null) {
             stmt.bindString(16, economy);
         }
-
+ 
         String oldhelp = entity.getOldhelp();
         if (oldhelp != null) {
             stmt.bindString(17, oldhelp);
         }
-
+ 
         String accident = entity.getAccident();
         if (accident != null) {
             stmt.bindString(18, accident);
         }
-
+ 
         String wish1 = entity.getWish1();
         if (wish1 != null) {
             stmt.bindString(19, wish1);
         }
-
+ 
         String wish2 = entity.getWish2();
         if (wish2 != null) {
             stmt.bindString(20, wish2);
         }
     }
 
-    /**
-     * @inheritdoc
-     */
+    /** @inheritdoc */
     @Override
     public Long readKey(Cursor cursor, int offset) {
         return cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0);
     }
 
-    /**
-     * @inheritdoc
-     */
+    /** @inheritdoc */
     @Override
     public PersonInfo readEntity(Cursor cursor, int offset) {
         PersonInfo entity = new PersonInfo( //
@@ -235,9 +227,7 @@ public class PersonInfoDao extends AbstractDao<PersonInfo, Long> {
         return entity;
     }
 
-    /**
-     * @inheritdoc
-     */
+    /** @inheritdoc */
     @Override
     public void readEntity(Cursor cursor, PersonInfo entity, int offset) {
         entity.setId(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0));
@@ -262,18 +252,14 @@ public class PersonInfoDao extends AbstractDao<PersonInfo, Long> {
         entity.setWish2(cursor.isNull(offset + 19) ? null : cursor.getString(offset + 19));
     }
 
-    /**
-     * @inheritdoc
-     */
+    /** @inheritdoc */
     @Override
     protected Long updateKeyAfterInsert(PersonInfo entity, long rowId) {
         entity.setId(rowId);
         return rowId;
     }
 
-    /**
-     * @inheritdoc
-     */
+    /** @inheritdoc */
     @Override
     public Long getKey(PersonInfo entity) {
         if (entity != null) {
@@ -286,9 +272,9 @@ public class PersonInfoDao extends AbstractDao<PersonInfo, Long> {
     /**
      * @inheritdoc
      */
-    @Override
+    @Override    
     protected boolean isEntityUpdateable() {
         return true;
     }
-
+    
 }

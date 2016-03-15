@@ -5,9 +5,8 @@ import android.app.Dialog;
 
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
-import android.widget.DatePicker;
 
-import com.ice.wenjuandiaocha.activity.PersonInfoActivity;
+import com.ice.wenjuandiaocha.activity.PersonInfoBackActivity;
 
 import java.util.Calendar;
 
@@ -31,7 +30,7 @@ public class DatePickerFragment extends DialogFragment {
         mMonth = 1;
         mDay = 1;
         // Create a new instance of DatePickerDialog and return it
-        return new DatePickerDialog(getActivity(), (PersonInfoActivity) getActivity(), mYear, mMonth, mDay);
+        return new DatePickerDialog(getActivity(), (PersonInfoBackActivity) getActivity(), mYear, mMonth, mDay);
     }
 
 //    public void onDateSet(DatePicker view, int year, int month, int day) {

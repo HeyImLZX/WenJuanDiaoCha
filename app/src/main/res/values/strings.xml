@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WenJuanDiaoCha</string>
+    <string name="app_name">问卷调查</string>
 
     <string-array name="sex_array">
         <item>男</item>
@@ -84,4 +84,5 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="title_activity_login111">Sign in</string>
 </resources>

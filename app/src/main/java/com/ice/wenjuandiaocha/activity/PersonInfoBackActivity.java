@@ -5,13 +5,11 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -23,15 +21,15 @@ import com.ice.greendao.DaoSession;
 import com.ice.greendao.PersonInfo;
 import com.ice.greendao.PersonInfoDao;
 import com.ice.wenjuandiaocha.R;
+import com.ice.wenjuandiaocha.base.BaseBackActivity;
 import com.ice.wenjuandiaocha.util.DatePickerFragment;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnCheckedChanged;
 
-public class PersonInfoActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
+public class PersonInfoBackActivity extends BaseBackActivity implements DatePickerDialog.OnDateSetListener {
 
-    private static final String TAG = "PersonInfoActivity";
+    private static final String TAG = "PersonInfoBackActivity";
     @Bind(R.id.name)
     EditText name;
     @Bind(R.id.sex)
@@ -94,6 +92,7 @@ public class PersonInfoActivity extends AppCompatActivity implements DatePickerD
         setContentView(R.layout.activity_person_info);
         ButterKnife.bind(this);
 
+        setTitle("基本信息");
         // 官方推荐将获取 DaoMaster 对象的方法放到 Application 层，这样将避免多次创建生成 Session 对象
         setupDatabase();
         // 获取 NoteDao 对象
@@ -142,15 +141,6 @@ public class PersonInfoActivity extends AppCompatActivity implements DatePickerD
         oldhelpAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         oldhelp.setAdapter(oldhelpAdapter);
 
-//
-//        sex.setOnItemSelectedListener(listener);
-//        education.setOnItemSelectedListener(listener);
-//        occupation.setOnItemSelectedListener(listener);
-//        marriage.setOnItemSelectedListener(listener);
-//        payment.setOnItemSelectedListener(listener);
-//        home.setOnItemSelectedListener(listener);
-//        economy.setOnItemSelectedListener(listener);
-//        oldhelp.setOnItemSelectedListener(listener);
 
         birthday.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -162,18 +152,37 @@ public class PersonInfoActivity extends AppCompatActivity implements DatePickerD
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (name.getText().toString().isEmpty())
+                    name.setError("姓名不能为空");
+                if (height.getText().toString().isEmpty())
+                    height.setError("请输入身高");
+                if (weight.getText().toString().isEmpty())
+                    weight.setError("请输入体重");
+                if (provider.getText().toString().isEmpty())
+                    provider.setError("请输入供史者");
+                if (relation.getText().toString().isEmpty())
+                    relation.setError("请输入亲属关系");
+                if (age.getText().toString().isEmpty())
+                    age.setError("请输入亲属关系");
+                if (religion.getText().toString().isEmpty())
+                    religion.setError("请输入宗教信仰");
+                if (idcard.getText().toString().isEmpty())
+                    idcard.setError("请输入身份证号");
+
+
                 if (name.getText().toString().isEmpty()
                         || height.getText().toString().isEmpty()
                         || weight.getText().toString().isEmpty()
                         || provider.getText().toString().isEmpty()
+                        || age.getText().toString().isEmpty()
                         || relation.getText().toString().isEmpty()
                         || religion.getText().toString().isEmpty()
                         || idcard.getText().toString().isEmpty()) {
-                    Toast.makeText(PersonInfoActivity.this, "请完整填写信息", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PersonInfoBackActivity.this, "请完整填写信息", Toast.LENGTH_SHORT).show();
                 } else {
                     insertDao();
 
-                    Intent intent = new Intent(PersonInfoActivity.this, SimpleInfoActivity.class);
+                    Intent intent = new Intent(PersonInfoBackActivity.this, SimpleInfoBackActivity.class);
                     startActivity(intent);
                 }
             }
@@ -295,4 +304,6 @@ public class PersonInfoActivity extends AppCompatActivity implements DatePickerD
         birthday.setText(result);
 
     }
+
+
 }

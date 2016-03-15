@@ -8,24 +8,31 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
+        android:name=".Application.MyApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/wenjuan2"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
+        <activity
+            android:name=".activity.MainBackActivity"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.PersonInfoActivity" />
+        <activity android:name=".activity.PersonInfoBackActivity" />
+        <activity android:name=".activity.SimpleInfoBackActivity" />
+        <activity android:name=".activity.WaTianBackActivity" />
+        <activity android:name=".activity.LoginBackActivity" />
+        <activity android:name=".activity.UploadBackActivity" />
         <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login" />
-        <activity android:name=".activity.SimpleInfoActivity" />
-        <activity android:name=".activity.WaTianActivity"></activity>
+            android:name=".activity.LoginActivity111"
+            android:label="@string/title_activity_login111" />
+        <activity android:name=".base.BaseBackActivity" />
+        <activity android:name=".base.BaseActivity"></activity>
     </application>
 
 </manifest>
