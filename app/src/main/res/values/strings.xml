@@ -114,6 +114,116 @@
     <string name="radioS6">大量身体接触的帮助</string>
     <string name="radioS7">完全依赖</string>
 
+
+    <string name="temp1">1.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp2">2.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp3">3.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp4">4.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp5">5.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp6">6.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp7">7.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp8">8.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp9">9.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp10">10.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp11">11.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp12">12.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp13">13.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp14">14.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp15">15.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp16">16.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp17">17.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp18">18.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp19">19.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+
+
+    <string name="mna1">1.在过去的3个月由于食欲下降、消化系统问题、咀嚼或吞咽困难，使食物摄入减少吗？</string>
+    <string name="mna2">2.在最近3个月中有体重减轻</string>
+    <string name="mna3">3.移动</string>
+    <string name="mna4">4.在过去的3个月中，遭受心理压力或急性疾病</string>
+    <string name="mna5">5.神经心理问题</string>
+    <string name="mna6">6.体重指数（BMI）</string>
+    <string name="mna7">7.可以独立生活（非护理院或医院）</string>
+    <string name="mna8">8.每天服用三种以上处方药物</string>
+    <string name="mna9">9.褥疮或皮肤溃疡</string>
+    <string name="mna10">10.患者每日进几餐（指一日三餐）</string>
+    <string name="mna11">11.选择摄入蛋白质的消耗量\n每日至少进食（牛奶酸奶中的一种）（是否）\n每周进食两种以上的豆类或蛋类（是否）\n每日进食肉、鱼或禽类（是否）</string>
+    <string name="mna12">12.每日食用2种以上的水果和蔬菜</string>
+    <string name="mna13">13.每日进食液体情况（水、果汁、咖啡、茶、奶等，1杯=250ml）</string>
+    <string name="mna14">14.进食的方式</string>
+    <string name="mna15">15.对自己营养状况的认识（病患自己觉得营养方面有无问题？）</string>
+    <string name="mna16">16.患者认为与其他的同龄人相比自己的健康状况如何</string>
+    <string name="mna17">17.上臂围（MAC，单位：cm）</string>
+    <string name="mna18">18.小腿围（C.C，单位：cm）</string>
+
+
+    <string name="tunyan1">1.不适合任何吞咽训练，仍不能经口进食</string>
+    <string name="tunyan2">2.仅适合基本吞咽训练，仍不能经口进食</string>
+    <string name="tunyan3">3.可进行摄食训练，但仍不能经口进食</string>
+    <string name="tunyan4">4.在安慰中可能少量进食，但需要静脉营养</string>
+    <string name="tunyan5">5.1至2种食物经口进食，需部分静脉营养</string>
+    <string name="tunyan6">6.3种食物可经口进食，需部分静脉营养</string>
+    <string name="tunyan7">7.3种食物可经口进食，不需静脉营养</string>
+    <string name="tunyan8">8.除特别难咽的食物外，均可经口进食</string>
+    <string name="tunyan9">9.可经口进食，但需临床观察指导</string>
+    <string name="tunyan10">10.正常摄食吞咽功能</string>
+
+
+    <string name="iciqsf1">1.您的遗尿次数？</string>
+    <string name="iciqsf2">2.通常情况下，您的遗尿量是多少？（不管您是否使用了防护用品）</string>
+    <string name="iciqsf3">3.总体上看，遗尿对您的日常生活影响程度如何？</string>
+    <string name="iciqsf4">4.什么时候发生遗尿？</string>
+
+
+    <string name="fra1">1.步态异常/假肢</string>
+    <string name="fra2">2.行走需要辅助设施</string>
+    <string name="fra3">3.行走需要人帮助</string>
+    <string name="fra4">4.有跌倒史</string>
+    <string name="fra5">5.因跌倒住院</string>
+    <string name="fra6">6.谵妄</string>
+    <string name="fra7">7.痴呆</string>
+    <string name="fra8">8.兴奋/行为异常</string>
+    <string name="fra9">9.神志恍惚</string>
+    <string name="fra10">10.失禁</string>
+    <string name="fra11">11.频率增加</string>
+    <string name="fra12">12.保留尿管</string>
+    <string name="fra13">13.视觉受损</string>
+    <string name="fra14">14.听觉受损</string>
+    <string name="fra15">15.感觉性失语</string>
+    <string name="fra16">16.其他情况</string>
+    <string name="fra17">17.多醒</string>
+    <string name="fra18">18.失眠</string>
+    <string name="fra19">19.夜游症</string>
+    <string name="fra20">20.新药</string>
+    <string name="fra21">21.心血管药</string>
+    <string name="fra22">22.降压药</string>
+    <string name="fra23">23.镇静、催眠药</string>
+    <string name="fra24">24.戒断治疗</string>
+    <string name="fra25">25.糖尿病用药</string>
+    <string name="fra26">26.抗癫痫药</string>
+    <string name="fra27">27.麻醉药</string>
+    <string name="fra28">28.其他</string>
+    <string name="fra29">29.神经科疾病</string>
+    <string name="fra30">30.骨质疏松症</string>
+    <string name="fra31">31.骨折史</string>
+    <string name="fra32">32.低血压</string>
+    <string name="fra33">33.药物/酒精戒断</string>
+    <string name="fra34">34.缺氧症</string>
+    <string name="fra35">35.年龄>80岁</string>
+
+
+    <string name="camcr1">1.(判断从前驱期到疾病发展期的时间)患者的精神状况有急性变化的证据吗</string>
+    <string name="camcr2">2.请患者按顺序说出21到1之间的所有单数，患者的注意力难以集中吗？如容易注意涣散或难以交流吗？</string>
+    <string name="camcr3">3.患者的思维是凌乱或不连贯的吗？例如，谈话主题散漫或不中肯，思维不清晰或不合逻辑，或从一个话题突然转到另一话题</string>
+    <string name="camcr4">4.总体上看，您是如何评估该患者的意识水平</string>
+    <string name="camcr5">5.在会面的任何时间患者存在定向障碍吗？例如，他认为自己是在其他地方而不是在医院，使用错的床位，或错误的判断一天的时间或错误的判断MMSE为基础的有关时间或空间定向</string>
+    <string name="camcr6">6.（以会议MMSE中的三个词为主）在面谈时患者表现出记忆方面的问题吗？例如SE，不能回忆医院里面发生的事情，或难以回忆指令（包括回忆MMSE中的三个词）</string>
+    <string name="camcr7">7.患者有直觉障碍的证据吗？例如，幻觉、错觉或对事物的曲解（如当某一东西移动，而患者认为他在移动）</string>
+    <string name="camcr8">8.面谈时，患者有行为活动不正常的增加吗？例如坐立不安、轻微敲手指或突然变换位置</string>
+    <string name="camcr9">9.面谈时，患者有运动行为水平的异常减少吗？例如，常懒散，缓慢进入某一控件、停留磨一位置时间过长或移动很慢</string>
+    <string name="camcr10">10.患者的精神状况（注意力、思维、定向、记忆力）在面谈前或面谈中有波动吗？</string>
+    <string name="camcr11">11.（患者日渐过度睡眠而夜间失眠）患者有睡眠-觉醒周期紊乱的证据吗？例如日间过度睡眠而夜间失眠</string>
+
+
     <string name="zung1">1.我感到比往常更加神经过敏和焦虑</string>
     <string name="zung2">2.我无缘无故感到担心</string>
     <string name="zung3">3.我更容易心烦意乱或感到恐慌</string>
@@ -246,25 +356,6 @@
     <string name="fim17">17.解决问题</string>
     <string name="fim18">18.记忆</string>
 
-    <string name="temp1">1.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
-    <string name="temp2">2.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
-    <string name="temp3">3.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
-    <string name="temp4">4.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
-    <string name="temp5">5.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
-    <string name="temp6">6.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
-    <string name="temp7">7.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
-    <string name="temp8">8.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
-    <string name="temp9">9.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
-    <string name="temp10">10.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
-    <string name="temp11">11.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
-    <string name="temp12">12.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
-    <string name="temp13">13.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
-    <string name="temp14">14.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
-    <string name="temp15">15.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
-    <string name="temp16">16.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
-    <string name="temp17">17.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
-    <string name="temp18">18.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
-    <string name="temp19">19.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/camcr1" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="无"
+            app:radio_text2="3天至一周"
+            app:radio_text3="1-3天"
+            app:radio_text4="1天之内">
+
+            <include layout="@layout/four_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/camcr2" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="无"
+            app:radio_text2="1-2个错误"
+            app:radio_text3="3-4个错误"
+            app:radio_text4="5个或5个以上的错误">
+
+            <include layout="@layout/four_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/camcr3" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:layout_width="wrap_content"
+            android:id="@+id/group3"
+            android:layout_height="wrap_content"
+            app:radio_text1="无"
+            app:radio_text2="偶尔短暂的言语模糊或不可理解"
+            app:radio_text3="经常短暂的言语不可理解，对交谈有明显的影响"
+            app:radio_text4="大多数的时间言语不可理解，难以进行有效的交谈">
+
+            <include layout="@layout/four_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/camcr4" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/group4"
+            app:radio_text1="无"
+            app:radio_text2="警觉（对环境刺激高度警惕、孤独敏感）"
+            app:radio_text3="嗜睡（瞌睡、但易于唤醒）或昏睡（难以唤醒）"
+            app:radio_text4="昏迷（不能唤醒）">
+
+            <include layout="@layout/four_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/camcr5" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/group5"
+            app:radio_text1="无"
+            app:radio_text2="偶尔短暂的存在时间或地点的定向错误（接近正确），但可以自行纠正"
+            app:radio_text3="经常存在时间或地点的定向错误，但自我定向好"
+            app:radio_text4="时间、地点及自我定向均差">
+
+            <include layout="@layout/four_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/camcr6" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/group6"
+            app:radio_text1="无"
+            app:radio_text2="有1个词不能回忆或回忆错误"
+            app:radio_text3="有2个词不能回忆或回忆错误"
+            app:radio_text4="有3个词不能回忆或回忆错误">
+
+            <include layout="@layout/four_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/camcr7" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/group7"
+            app:radio_text1="无"
+            app:radio_text2="只存在幻听"
+            app:radio_text3="只存在幻听，有或没有幻听"
+            app:radio_text4="存在幻触、幻嗅或幻味，有或没有幻听">
+
+            <include layout="@layout/four_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/camcr8" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/group8"
+            app:radio_text1="无"
+            app:radio_text2="偶尔有坐立不安、焦虑、轻敲手指及抖动"
+            app:radio_text3="反复无目的地走动、激越明显"
+            app:radio_text4="行为杂乱无章，需要约束">
+
+            <include layout="@layout/four_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/camcr9" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/group9"
+            app:radio_text1="无"
+            app:radio_text2="偶尔比先前的活动、行为及动作缓慢"
+            app:radio_text3="经常保持一种姿势"
+            app:radio_text4="木僵状态">
+
+            <include layout="@layout/four_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/camcr10" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="无"
+            android:id="@+id/group10"
+            app:radio_text2="1天中偶有波动"
+            app:radio_text3="症状在夜间加重"
+            app:radio_text4="症状在1天中剧烈波动">
+
+            <include layout="@layout/four_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/camcr11" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/group11"
+            app:radio_text1="无"
+            app:radio_text2="日间偶有瞌睡，且夜间时睡时醒"
+            app:radio_text3="日间经常瞌睡且夜间时睡时醒或不能入睡"
+            app:radio_text4="日间经常昏睡而且影响交谈，且夜间不能入睡">
+
+            <include layout="@layout/four_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:layout_marginTop="@dimen/activity_margin_32"
+            android:background="@color/colorLightBlue"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="填写完成"
+            android:textColor="@color/colorWhite" />
+    </LinearLayout>
+</ScrollView>

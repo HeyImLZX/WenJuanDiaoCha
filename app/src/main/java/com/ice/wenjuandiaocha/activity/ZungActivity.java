@@ -2,16 +2,16 @@ package com.ice.wenjuandiaocha.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.ice.wenjuandiaocha.R;
 
+import java.util.ArrayList;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
 
 public class ZungActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
@@ -59,6 +59,9 @@ public class ZungActivity extends AppCompatActivity implements RadioGroup.OnChec
     @Bind(R.id.add)
     Button add;
 
+    ArrayList<RadioGroup> groupList = new ArrayList<RadioGroup>();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,19 +89,57 @@ public class ZungActivity extends AppCompatActivity implements RadioGroup.OnChec
         group19.setOnCheckedChangeListener(this);
         group20.setOnCheckedChangeListener(this);
 
+        groupList.add(group1);
+        groupList.add(group2);
+        groupList.add(group3);
+        groupList.add(group4);
+        groupList.add(group5);
+        groupList.add(group6);
+        groupList.add(group7);
+        groupList.add(group8);
+        groupList.add(group9);
+        groupList.add(group10);
+        groupList.add(group11);
+        groupList.add(group12);
+        groupList.add(group13);
+        groupList.add(group14);
+        groupList.add(group15);
+        groupList.add(group16);
+        groupList.add(group17);
+        groupList.add(group18);
+        groupList.add(group19);
+        groupList.add(group20);
 
     }
 
     @OnClick(R.id.add)
     public void onClick() {
 
+        StringBuilder sb = new StringBuilder();
+
+        int score = 0;
+        for (int i = 0; i < 20; i++) {
+            int chose = groupList.get(i).getCheckedRadioButtonId() % 4;
+            chose = chose == 0 ? 4 : chose;
+            sb.append(chose);
+
+            if (i == 4 || i == 8 || i == 12 || i == 16 || i == 18) {//5 9 13 17 19 都-1
+                score = score + 5 - chose;
+
+            } else
+                score = score + chose;
+
+        }
+
+        System.out.println(sb.toString());
+        System.out.println((int) (score * 1.25));
         finish();
 
     }
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
-        Toast.makeText(ZungActivity.this, "click  " + checkedId, Toast.LENGTH_SHORT).show();
+        //   Toast.makeText(ZungActivity.this, "click  " + checkedId, Toast.LENGTH_SHORT).show();
     }
 //    @On({R.id.group1, R.id.group2, R.id.group3, R.id.group4, R.id.group5, R.id.group6, R.id.group7, R.id.group8, R.id.group9, R.id.group10, R.id.group11, R.id.group12, R.id.group13, R.id.group14, R.id.group15, R.id.group16, R.id.group17, R.id.group18, R.id.group19, R.id.group20})
 //    public void onCheckedChanged(RadioGroup group, int checkedId) {

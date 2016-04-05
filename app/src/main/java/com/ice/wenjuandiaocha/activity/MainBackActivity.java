@@ -9,7 +9,6 @@ import android.widget.Button;
 
 import com.ice.wenjuandiaocha.R;
 import com.ice.wenjuandiaocha.base.BaseActivity;
-import com.ice.wenjuandiaocha.base.BaseBackActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -25,6 +24,8 @@ public class MainBackActivity extends BaseActivity {
     Button upload;
     @Bind(R.id.exit)
     Button exit;
+    @Bind(R.id.test)
+    Button test;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,7 @@ public class MainBackActivity extends BaseActivity {
 
     }
 
-    @OnClick({R.id.login, R.id.invest, R.id.upload, R.id.exit})
+    @OnClick({R.id.login, R.id.invest, R.id.upload, R.id.exit, R.id.test})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.login:
@@ -47,7 +48,7 @@ public class MainBackActivity extends BaseActivity {
                 startActivity(intent);
                 break;
             case R.id.upload:
-                Intent intent2 = new Intent(MainBackActivity.this, ZungActivity.class);
+                Intent intent2 = new Intent(MainBackActivity.this, UploadBackActivity.class);
                 startActivity(intent2);
                 break;
             case R.id.exit:
@@ -65,6 +66,10 @@ public class MainBackActivity extends BaseActivity {
                     }
                 });
                 builder.show();
+                break;
+            case R.id.test:
+                Intent intent9 = new Intent(MainBackActivity.this, TestActivity.class);
+                startActivity(intent9);
                 break;
         }
     }

@@ -63,13 +63,9 @@ public class UploadBackActivity extends BaseBackActivity {
         personInfos = getAllPerson();
         dataNum.setText("未上传记录数目：" + personInfos.size());
 
-
         Gson gson = new Gson();
-
         jsonStr = gson.toJson(personInfos);
-
         Log.e("SSS", jsonStr);
-
 
     }
 

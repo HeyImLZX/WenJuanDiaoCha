@@ -37,7 +37,18 @@
         <activity android:name=".activity.ADLActivity" />
         <activity android:name=".activity.APGARActivity" />
         <activity android:name=".activity.FAQActivity" />
-        <activity android:name=".activity.FIMActivity"></activity>
+        <activity android:name=".activity.FIMActivity" />
+        <activity android:name=".activity.MNAActivity" />
+        <activity android:name=".activity.CAMCRActivity" />
+        <activity android:name=".activity.TunYanActivity" />
+        <activity android:name=".activity.ICIQSFActivity" />
+        <activity android:name=".activity.FRSActivity" />
+        <activity android:name=".activity.FRAActivity" />
+        <activity android:name=".activity.TestActivity" />
+        <activity android:name=".activity.PSQIActivity" />
+        <activity android:name=".activity.MiniCogActivity" />
+        <activity android:name=".activity.MMSEActivity" />
+        <activity android:name=".activity.TinettiActivity"></activity>
     </application>
 
 </manifest>

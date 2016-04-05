@@ -1,15 +1,15 @@
 package com.ice.wenjuandiaocha.activity;
 
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 
 import com.ice.wenjuandiaocha.R;
 
-public class ADLActivity extends AppCompatActivity {
+public class TinettiActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_adl);
+        setContentView(R.layout.activity_tinetti);
     }
 }

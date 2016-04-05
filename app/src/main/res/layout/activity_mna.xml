@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".activity.MNAActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/mna1" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="严重食物摄入减少（食欲完全丧失）"
+            app:radio_text2="中度食物摄入减少"
+            app:radio_text3="食物的摄入无改变"
+            app:radio_text4=" ">
+
+            <include layout="@layout/three_radio_layout" />
+
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/mna2" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="体重减轻>KG"
+            app:radio_text2="不知道"
+            app:radio_text3="体重减轻在1-3kg"
+            app:radio_text4="无体重减轻">
+
+            <include layout="@layout/four_radio_layout" />
+
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/mna3" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="只能在床或椅子上活动"
+            app:radio_text2="能离开床或椅子，但不能外出"
+            app:radio_text3="可以外出"
+            app:radio_text4="1">
+
+            <include layout="@layout/three_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/mna4" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="是"
+            app:radio_text2="否"
+            app:radio_text3="是"
+            app:radio_text4="是">
+
+            <include layout="@layout/two_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/mna5" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="严重的精神紊乱或抑郁"
+            app:radio_text2="中等程度的精神紊乱或抑郁"
+            app:radio_text3="无精神心理问题"
+            app:radio_text4="2">
+
+            <include layout="@layout/three_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/mna6" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="BMI&lt;19"
+            app:radio_text2="19 ≤BMI&lt;21"
+            app:radio_text3="21≤BMI &lt;23"
+            app:radio_text4="BMI≥23">
+
+            <include layout="@layout/four_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/mna7" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="否"
+            app:radio_text2="是"
+            app:radio_text3="是"
+            app:radio_text4="是是">
+
+            <include layout="@layout/two_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/mna8" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="是"
+            app:radio_text2="否"
+            app:radio_text3="是"
+            app:radio_text4="是">
+
+            <include layout="@layout/two_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/mna9" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="有"
+            app:radio_text2="无"
+            app:radio_text3="是"
+            app:radio_text4="是">
+
+            <include layout="@layout/two_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/mna10" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="1餐"
+            app:radio_text2="2餐"
+            app:radio_text3="3餐"
+            app:radio_text4="是">
+
+            <include layout="@layout/three_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/mna11" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="0或1个是"
+            app:radio_text2="2个是"
+            app:radio_text3="3个是"
+            app:radio_text4="是">
+
+            <include layout="@layout/three_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/mna12" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="否"
+            app:radio_text2="是"
+            app:radio_text3="是"
+            app:radio_text4="是">
+
+            <include layout="@layout/two_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/mna13" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="至少3杯"
+            app:radio_text2="3-5杯"
+            app:radio_text3="大于5杯"
+            app:radio_text4="0">
+
+            <include layout="@layout/three_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/mna14" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="必须在帮助下进食"
+            app:radio_text2="独自进食但有些困难"
+            app:radio_text3="独自进食无任何问题"
+            app:radio_text4="d">
+
+            <include layout="@layout/three_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/mna15" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="认为自己有营养不良"
+            app:radio_text2="对自己的营养状况不确定"
+            app:radio_text3="认为自己没有营养问题"
+            app:radio_text4="3">
+
+            <include layout="@layout/three_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/mna16" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="不好"
+            app:radio_text2="不知道"
+            app:radio_text3="一样好"
+            app:radio_text4="更好">
+
+            <include layout="@layout/four_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/mna17" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="MAC&lt;21"
+            app:radio_text2="MAC 21-21.9"
+            app:radio_text3="MAC&gt;22"
+            app:radio_text4="日间经常昏睡而且影响交谈，且夜间不能入睡">
+
+            <include layout="@layout/three_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/mna18" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="C.C小于31"
+            app:radio_text2="C.C大于等于31"
+            app:radio_text3="日间经常瞌睡且夜间时睡时醒或不能入睡"
+            app:radio_text4="日间经常昏睡而且影响交谈，且夜间不能入睡">
+
+            <include layout="@layout/two_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:layout_marginTop="@dimen/activity_margin_32"
+            android:background="@color/colorLightBlue"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="填写完成"
+            android:textColor="@color/colorWhite" />
+    </LinearLayout>
+
+</ScrollView>

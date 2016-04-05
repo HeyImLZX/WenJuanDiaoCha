@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorGray">
+
+
+    <com.ice.wenjuandiaocha.util.FourRadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:radio_text1="nihao"
+        app:radio_text2="wqeq"
+        app:radio_text3="awea"
+        app:radio_text4="qweq">
+
+        <include layout="@layout/four_radio_layout" />
+    </com.ice.wenjuandiaocha.util.FourRadioGroup>
+</LinearLayout>

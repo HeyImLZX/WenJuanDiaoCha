@@ -1,7 +1,9 @@
 package com.ice.wenjuandiaocha.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+import com.ice.wenjuandiaocha.R;
 
 public class FAQActivity extends AppCompatActivity {
 
