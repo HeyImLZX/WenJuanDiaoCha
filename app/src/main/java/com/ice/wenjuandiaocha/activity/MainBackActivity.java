@@ -47,7 +47,7 @@ public class MainBackActivity extends BaseActivity {
                 startActivity(intent);
                 break;
             case R.id.upload:
-                Intent intent2 = new Intent(MainBackActivity.this, UploadBackActivity.class);
+                Intent intent2 = new Intent(MainBackActivity.this, ZungActivity.class);
                 startActivity(intent2);
                 break;
             case R.id.exit:

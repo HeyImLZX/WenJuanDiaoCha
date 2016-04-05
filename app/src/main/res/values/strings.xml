@@ -72,6 +72,200 @@
     </string-array>
     <string name="title_activity_login">Sign in</string>
 
+    <string name="radioA">是</string>
+    <string name="radioB">否</string>
+
+    <string name="radio1A">经常</string>
+    <string name="radio1B">有时</string>
+    <string name="radio1C">很少</string>
+
+    <string name="radio1">很少有</string>
+    <string name="radio2">有时有</string>
+    <string name="radio3">大部分时间有</string>
+    <string name="radio4">绝大多数时间有</string>
+
+    <string name="radio11">偶/无</string>
+    <string name="radio12">有时</string>
+    <string name="radio13">经常</string>
+    <string name="radio14">持续</string>
+
+
+    <string name="radio21">无</string>
+    <string name="radio22">轻微/间歇</string>
+    <string name="radio23">严重</string>
+    <string name="radio24">不能评价</string>
+
+
+    <string name="radio31">自己完全可以做</string>
+    <string name="radio32">有些困难但自己尚能完成</string>
+    <string name="radio33">需要帮助</string>
+    <string name="radio34">根本无法做</string>
+
+    <string name="radio41">完全自理</string>
+    <string name="radio42">有困难但能做</string>
+    <string name="radio43">需人帮助</string>
+    <string name="radio44">完全不能</string>
+
+    <string name="radioS1">完全独立</string>
+    <string name="radioS2">有条件独立</string>
+    <string name="radioS3">监护和准备</string>
+    <string name="radioS4">少量身体接触的帮助</string>
+    <string name="radioS5">中量身体接触的帮助</string>
+    <string name="radioS6">大量身体接触的帮助</string>
+    <string name="radioS7">完全依赖</string>
+
+    <string name="zung1">1.我感到比往常更加神经过敏和焦虑</string>
+    <string name="zung2">2.我无缘无故感到担心</string>
+    <string name="zung3">3.我更容易心烦意乱或感到恐慌</string>
+    <string name="zung4">4.我感到我的身体好像被分成几块，支离破碎</string>
+    <string name="zung5">5.我感到事事都很顺利，不会有倒霉的事情发生</string>
+    <string name="zung6">6.我四肢抖动和震颤</string>
+    <string name="zung7">7.我因头痛、颈痛。背痛而烦恼</string>
+    <string name="zung8">8.我感到无力且容易疲劳</string>
+    <string name="zung9">9.我感到很平静，能安静坐下来</string>
+    <string name="zung10">10.我感到我的心跳较快</string>
+    <string name="zung11">11.我因阵阵的眩晕而不舒服</string>
+    <string name="zung12">12.我有阵阵要昏倒的感觉</string>
+    <string name="zung13">13.我怕呼吸时进气和出气都不费力</string>
+    <string name="zung14">14.我的手指和脚趾感到麻木和刺痛</string>
+    <string name="zung15">15.我因胃痛和消化不良而苦恼</string>
+    <string name="zung16">16.我必须时常排尿</string>
+    <string name="zung17">17.我的手总是很温暖而干燥</string>
+    <string name="zung18">18.我觉得连发烧发红</string>
+    <string name="zung19">19.我容易入睡，晚上休息很好</string>
+    <string name="zung20">20.我做噩梦</string>
+
+    <string name="zungsds1">1.我感到情绪沮丧，郁闷</string>
+    <string name="zungsds2">2.我感到早晨心情最好</string>
+    <string name="zungsds3">3.我要哭或想哭</string>
+    <string name="zungsds4">4.我夜间睡眠不好</string>
+    <string name="zungsds5">5.我吃饭像平时一样多</string>
+    <string name="zungsds6">6.我的性功能正常</string>
+    <string name="zungsds7">7.我感到体重减轻</string>
+    <string name="zungsds8">8.我为便秘而烦恼</string>
+    <string name="zungsds9">9.我的心跳比平时快</string>
+    <string name="zungsds10">10.我无故感到疲劳</string>
+    <string name="zungsds11">11.我的头像往常一样清楚</string>
+    <string name="zungsds12">12.我做事情像平时一样不感到困难</string>
+    <string name="zungsds13">13.我坐卧不安，难以保持平静</string>
+    <string name="zungsds14">14.我对未来感到有希望</string>
+    <string name="zungsds15">15.我比平时更易激动</string>
+    <string name="zungsds16">16.我觉得决定事情很容易</string>
+    <string name="zungsds17">17.我感到自己是有用的和不可缺少的人</string>
+    <string name="zungsds18">18.我的生活很有意义</string>
+    <string name="zungsds19">19.假如我死了别人会过得更好</string>
+    <string name="zungsds20">20.我怕仍旧喜欢自己平时喜欢的东西</string>
+
+    <string name="gds1">1.你对生活基本上满意吗？</string>
+    <string name="gds2">2.你是否放弃了许多活动和兴趣爱好？</string>
+    <string name="gds3">3.你是否觉得生活空虚？</string>
+    <string name="gds4">4.你是否常感到厌倦？</string>
+    <string name="gds5">5.你是否大部分时间感觉精神好？</string>
+    <string name="gds6">6.你是否害怕会有不幸的事落到你头上？</string>
+    <string name="gds7">7.你是否大部分时间感到快乐？</string>
+    <string name="gds8">8.你是否常感有无助的感觉？</string>
+    <string name="gds9">9.你是否愿意待在家里而不愿去做些新鲜事？</string>
+    <string name="gds10">10.你是否觉得记忆力比大多数人差？</string>
+    <string name="gds11">11.你是否认为现在这样活着毫无意义</string>
+    <string name="gds12">12.你是否觉得你的处境没有帮助？</string>
+    <string name="gds13">13.你是否觉得大多数人处境比你好？</string>
+    <string name="gds14">14.你集中精力有困难吗？</string>
+
+    <string name="gdsdd1">1.焦虑（焦急的表情、忧虑、担心）</string>
+    <string name="gdsdd2">2.悲伤（悲伤地表情或声音、哭泣）</string>
+    <string name="gdsdd3">3.对愉快事件无法应</string>
+    <string name="gdsdd4">4.易激动</string>
+    <string name="gdsdd5">5.激越（坐立不安、搓手、拉头发）</string>
+    <string name="gdsdd6">6.迟缓（行动或言语缓慢、反应迟钝）</string>
+    <string name="gdsdd7">7.多种躯体症状（如果只有肠胃道症状选无）</string>
+    <string name="gdsdd8">8.兴趣缺乏（很少参加一般活动）</string>
+    <string name="gdsdd9">9.食欲减退（饮食比平时少）</string>
+    <string name="gdsdd10">10.体重减轻（如果1个月内体重减轻超过2.27KG算严重）</string>
+    <string name="gdsdd11">11.精力减退（易疲劳，不能耐受活动）</string>
+    <string name="gdsdd12">12.白天情绪变化大（早晨症状重）</string>
+    <string name="gdsdd13">13.难以入睡（比平常入睡晚）</string>
+    <string name="gdsdd14">14.入睡后易醒</string>
+    <string name="gdsdd15">15.早醒（比平时睡得早）</string>
+    <string name="gdsdd16">16.自杀（感觉生活没有意义，有自杀意愿或企图）</string>
+    <string name="gdsdd17">17.不自信（自责、缺乏自尊，挫败感）</string>
+    <string name="gdsdd18">18.悲观（对事物发展缺乏信心）</string>
+    <string name="gdsdd19">19.心境近乎妄想（幻想贫困，疾病，损失）</string>
+
+
+    <string name="adl1">1.行走</string>
+    <string name="adl2">2.吃饭</string>
+    <string name="adl3">3.穿衣</string>
+    <string name="adl4">4.梳头、刷牙等</string>
+    <string name="adl5">5.洗澡</string>
+    <string name="adl6">6.定时如厕</string>
+    <string name="adl7">7.使用车辆</string>
+    <string name="adl8">8.做饭菜</string>
+    <string name="adl9">9.做家务</string>
+    <string name="adl10">10.洗衣</string>
+    <string name="adl11">11.购物</string>
+    <string name="adl12">12.吃药</string>
+    <string name="adl13">13.打电话</string>
+    <string name="adl14">14.处理自己的财务</string>
+
+
+    <string name="apgar1">1.当我遇到困难时，我可以从家人处得到满意的帮助</string>
+    <string name="apgar2">2.我很满意家人与我讨论各种事情以及分担问题的方式</string>
+    <string name="apgar3">3.当我喜欢从事新的活动或发展时，家人能接受并给与我帮助</string>
+    <string name="apgar4">4.我很满意家人对我表达感情的方式以及对我愤怒、悲伤等的情绪反应</string>
+    <string name="apgar5">5.我很满意家人与我共度美好时光的方式</string>
+
+
+    <string name="faq1">1.每月平衡收支的能力，算账的能力</string>
+    <string name="faq2">2.患者之工作能力，能否写出简单的记录</string>
+    <string name="faq3">3.能否到商店买衣服、杂货和家庭用品</string>
+    <string name="faq4">4.有否爱好、会不会下棋和打扑克</string>
+    <string name="faq5">5.会不会做简单的家务，如点炉子、泡茶</string>
+    <string name="faq6">6.会不会准备晚饭</string>
+    <string name="faq7">7.能否了解发生的近事</string>
+    <string name="faq8">8.能否参加讨论和了解电视、书、杂志</string>
+    <string name="faq9">9.能否记住约会时间、家庭节日、吃药等</string>
+    <string name="faq10">10.能否拜访邻居，自己乘公共的汽车等</string>
+
+
+    <string name="fim1">1.进食</string>
+    <string name="fim2">2.梳洗修饰</string>
+    <string name="fim3">3.洗澡</string>
+    <string name="fim4">4.穿裤子</string>
+    <string name="fim5">5.穿上衣</string>
+    <string name="fim6">6.上厕所</string>
+    <string name="fim7">7.膀胱管理</string>
+    <string name="fim8">8.直肠管理</string>
+    <string name="fim9">9.床、椅、轮椅间</string>
+    <string name="fim10">10.入厕</string>
+    <string name="fim11">11.盆浴或淋浴</string>
+    <string name="fim12">12.步行、轮椅</string>
+    <string name="fim13">13.上下楼梯</string>
+    <string name="fim14">14.理解：听、视</string>
+    <string name="fim15">15.表带：言语、非言语</string>
+    <string name="fim16">16.社会交往</string>
+    <string name="fim17">17.解决问题</string>
+    <string name="fim18">18.记忆</string>
+
+    <string name="temp1">1.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp2">2.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp3">3.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp4">4.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp5">5.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp6">6.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp7">7.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp8">8.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp9">9.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp10">10.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp11">11.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp12">12.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp13">13.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp14">14.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp15">15.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp16">16.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp17">17.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp18">18.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+    <string name="temp19">19.我感到早晨心情最好我感到早晨心情最好我感到早晨心情最好</string>
+
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>

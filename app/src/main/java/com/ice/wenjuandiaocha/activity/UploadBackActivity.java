@@ -9,13 +9,21 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.google.gson.Gson;
 import com.ice.greendao.PersonInfo;
 import com.ice.wenjuandiaocha.Application.MyApplication;
 import com.ice.wenjuandiaocha.R;
 import com.ice.wenjuandiaocha.base.BaseBackActivity;
+import com.ice.wenjuandiaocha.base.BaseBackActivity;
 import com.ice.wenjuandiaocha.tool.VolleySingleton;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 
 import java.util.List;
 
@@ -25,6 +33,7 @@ import butterknife.OnClick;
 
 public class UploadBackActivity extends BaseBackActivity {
 
+    private static final String VOLLEY_TAG = "UploadBackActivity";
     @Bind(R.id.upload)
     Button upload;
     @Bind(R.id.connect)
@@ -35,12 +44,10 @@ public class UploadBackActivity extends BaseBackActivity {
     TextView dataNum;
     @Bind(R.id.status)
     TextView status;
-    private RequestQueue mQueue;
     List<PersonInfo> personInfos;
-
+    private RequestQueue mQueue;
     private Cursor cursor;
     private String targetIp;
-    private static final String VOLLEY_TAG = "UploadBackActivity";
     private String jsonStr;
 
     @Override
@@ -55,7 +62,7 @@ public class UploadBackActivity extends BaseBackActivity {
 
         personInfos = getAllPerson();
         dataNum.setText("未上传记录数目：" + personInfos.size());
-        targetIp = ipText.getEditText().getText().toString();
+
 
         Gson gson = new Gson();
 
@@ -76,8 +83,10 @@ public class UploadBackActivity extends BaseBackActivity {
             case R.id.upload:
                 if (personInfos.size() < 0)
                     Toast.makeText(UploadBackActivity.this, "无新纪录上传", Toast.LENGTH_SHORT).show();
-                else
+                else {
+                    targetIp = ipText.getEditText().getText().toString();
                     sendSimplePost(jsonStr, targetIp, "上传成功", "上传失败", VOLLEY_TAG, true);
+                }
                 break;
             case R.id.connect:
                 break;
@@ -87,38 +96,47 @@ public class UploadBackActivity extends BaseBackActivity {
 
     public void sendSimplePost(String str, String targetIp, final String successText, final String failText, String VOLLEY_TAG, final boolean flag) {
 
-//
-//        StringRequest stringRequest = new StringRequest(Request.Method.POST, targetIp, str, new Response.Listener<String>() {
-//            @Override
-//            public void onResponse(String response) {
-//                Log.d("TAG", response.toString());
+
+        JSONArray params = null;
+        try {
+            params = new JSONArray(str);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+//        Log.d("TAG", params.toString());
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, "http://" + targetIp, params, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                Log.d("TAG", response.toString());
 //                try {
 //
-//                    JSONObject jsonObject = new JSONObject(response);
-//
-//                    String resp = jsonObject.getString("resp");
-//                    if (flag) {
-//                        if (resp.equals("Success")) {
-//                            Toast.makeText(MyApplication.getContext(), successText, Toast.LENGTH_SHORT).show();
-//                        } else {
-//                            Toast.makeText(MyApplication.getContext(), failText, Toast.LENGTH_SHORT).show();
-//                        }
-//                    }
+////                    JSONObject jsonObject = new JSONObject(response);
+////
+////                    String resp = jsonObject.getString("resp");
+////                    if (flag) {
+////                        if (resp.equals("Success")) {
+////                            Toast.makeText(MyApplication.getContext(), successText, Toast.LENGTH_SHORT).show();
+////                        } else {
+////                            Toast.makeText(MyApplication.getContext(), failText, Toast.LENGTH_SHORT).show();
+////                        }
+////                    }
 //
 //                } catch (JSONException e) {
 //                    e.printStackTrace();
 //                }
-//
-//            }
-//        }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                Log.e("TAG", error.getMessage(), error);
-//            }
-//        });
-//        stringRequest.setTag(VOLLEY_TAG);
-//        mQueue.add(stringRequest);
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("TAG", error.getMessage(), error);
+            }
+        });
+        jsonArrayRequest.setTag(VOLLEY_TAG);
+        mQueue.add(jsonArrayRequest);
     }
+
 
 }
 

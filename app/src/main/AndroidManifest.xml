@@ -28,11 +28,16 @@
         <activity android:name=".activity.WaTianBackActivity" />
         <activity android:name=".activity.LoginBackActivity" />
         <activity android:name=".activity.UploadBackActivity" />
-        <activity
-            android:name=".activity.LoginActivity111"
-            android:label="@string/title_activity_login111" />
         <activity android:name=".base.BaseBackActivity" />
-        <activity android:name=".base.BaseActivity"></activity>
+        <activity android:name=".base.BaseActivity" />
+        <activity android:name=".activity.ZungActivity" />
+        <activity android:name=".activity.ZungSDSActivity" />
+        <activity android:name=".activity.GDSActivity" />
+        <activity android:name=".activity.GDSDDActivity" />
+        <activity android:name=".activity.ADLActivity" />
+        <activity android:name=".activity.APGARActivity" />
+        <activity android:name=".activity.FAQActivity" />
+        <activity android:name=".activity.FIMActivity"></activity>
     </application>
 
 </manifest>

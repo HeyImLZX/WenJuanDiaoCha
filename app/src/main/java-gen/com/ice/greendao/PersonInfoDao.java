@@ -197,7 +197,7 @@ public class PersonInfoDao extends AbstractDao<PersonInfo, Long> {
     @Override
     public Long readKey(Cursor cursor, int offset) {
         return cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0);
-    }
+    }    
 
     /** @inheritdoc */
     @Override
@@ -226,7 +226,7 @@ public class PersonInfoDao extends AbstractDao<PersonInfo, Long> {
         );
         return entity;
     }
-
+     
     /** @inheritdoc */
     @Override
     public void readEntity(Cursor cursor, PersonInfo entity, int offset) {
@@ -250,15 +250,15 @@ public class PersonInfoDao extends AbstractDao<PersonInfo, Long> {
         entity.setAccident(cursor.isNull(offset + 17) ? null : cursor.getString(offset + 17));
         entity.setWish1(cursor.isNull(offset + 18) ? null : cursor.getString(offset + 18));
         entity.setWish2(cursor.isNull(offset + 19) ? null : cursor.getString(offset + 19));
-    }
-
+     }
+    
     /** @inheritdoc */
     @Override
     protected Long updateKeyAfterInsert(PersonInfo entity, long rowId) {
         entity.setId(rowId);
         return rowId;
     }
-
+    
     /** @inheritdoc */
     @Override
     public Long getKey(PersonInfo entity) {
@@ -269,9 +269,7 @@ public class PersonInfoDao extends AbstractDao<PersonInfo, Long> {
         }
     }
 
-    /**
-     * @inheritdoc
-     */
+    /** @inheritdoc */
     @Override    
     protected boolean isEntityUpdateable() {
         return true;

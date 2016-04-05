@@ -61,6 +61,22 @@ public class MyDaoGenerator {
         note.addStringProperty("wish1");
         note.addStringProperty("wish2");
 
+        Entity questionResult = schema.addEntity("questionResult");
+        // 你也可以重新给表命名
+        // note.setTableName("NODE");
+
+        // greenDAO 会自动根据实体类的属性值来创建表字段，并赋予默认值
+        // 接下来你便可以设置表中的字段：
+        questionResult.addIdProperty();
+        questionResult.addStringProperty("questionId").notNull();
+        // 与在 Java 中使用驼峰命名法不同，默认数据库中的命名是使用大写和下划线来分割单词的。
+        // For example, a property called “creationDate” will become a database column “CREATION_DATE”.
+        questionResult.addStringProperty("personId");
+
+        questionResult.addStringProperty("wtResult");
+        questionResult.addStringProperty("wtScore");
+        questionResult.addStringProperty("zungResult");
+        questionResult.addStringProperty("zungScore");
 
 
     }

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/activity_margin_8"
+        android:text="@string/radioS1" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:padding="@dimen/activity_margin_8"
+        android:layout_height="wrap_content"
+        android:text="@string/radioS2" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:padding="@dimen/activity_margin_8"
+        android:layout_height="wrap_content"
+        android:text="@string/radioS3" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:padding="@dimen/activity_margin_8"
+        android:layout_height="wrap_content"
+        android:text="@string/radioS4" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:padding="@dimen/activity_margin_8"
+        android:layout_height="wrap_content"
+        android:text="@string/radioS5" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:padding="@dimen/activity_margin_8"
+        android:layout_height="wrap_content"
+        android:text="@string/radioS6" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:padding="@dimen/activity_margin_8"
+        android:layout_height="wrap_content"
+        android:text="@string/radioS7" />
+</merge>

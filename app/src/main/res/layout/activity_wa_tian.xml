@@ -58,6 +58,7 @@
             android:padding="@dimen/activity_margin_8"
             android:text="频繁呛咳，不能全部咽下" />
 
+
     </RadioGroup>
 
     <Button
