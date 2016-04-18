@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,4 +10,288 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.ice.wenjuandiaocha.activity.ICIQSFActivity">
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/activity_margin_8"
+            android:text="尿失禁问卷表简表（ICI-Q-SF）"
+            android:textSize="32sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/iciqsf1" />
+
+        <com.ice.wenjuandiaocha.util.SevenRadioGroup
+            android:id="@+id/group1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:radio_text1="从来不遗尿"
+            app:radio_text2="一星期大约遗尿1次或经常不到1次"
+            app:radio_text3="一星期遗尿2次或3次"
+            app:radio_text4="每天大约遗尿1次"
+            app:radio_text5="一天遗尿数次"
+            app:radio_text6="一直遗尿"
+            app:radio_text7="ssssssssssssssss">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_margin_8"
+                android:text="从来不遗尿" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_margin_8"
+                android:text="一星期大约遗尿1次或经常不到1次" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_margin_8"
+                android:text="一星期遗尿2次或3次" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_margin_8"
+                android:text="每天大约遗尿1次" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_margin_8"
+                android:text="一天遗尿数次" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_margin_8"
+                android:text="一直遗尿" />
+        </com.ice.wenjuandiaocha.util.SevenRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/iciqsf2" />
+
+        <com.ice.wenjuandiaocha.util.SevenRadioGroup
+            android:id="@+id/group2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="不遗尿"
+            app:radio_text2="少量遗尿"
+            app:radio_text3="中等量遗尿"
+            app:radio_text4="大量遗尿"
+            app:radio_text5="ssssssssssssssss"
+            app:radio_text6="ssssssssssssssss"
+            app:radio_text7="ssssssssssssssss">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_margin_8"
+                android:text="不遗尿" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_margin_8"
+                android:text="少量遗尿" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_margin_8"
+                android:text="中等量遗尿" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_margin_8"
+                android:text="大量遗尿" />
+
+        </com.ice.wenjuandiaocha.util.SevenRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/iciqsf3" />
+
+        <com.ice.wenjuandiaocha.util.SevenRadioGroup
+            android:id="@+id/group3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="0"
+            app:radio_text2="1"
+            app:radio_text3="2"
+            app:radio_text4="3"
+            app:radio_text5="4"
+            app:radio_text6="5"
+            app:radio_text7="6">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_margin_8"
+                android:text="@string/radio31" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_margin_8"
+                android:text="@string/radio32" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_margin_8"
+                android:text="@string/radio33" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_margin_8"
+                android:text="@string/radio34" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_margin_8"
+                android:text="@string/radio32" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_margin_8"
+                android:text="@string/radio33" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_margin_8"
+                android:text="@string/radio34" />
+        </com.ice.wenjuandiaocha.util.SevenRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/iciqsf4" />
+
+
+        <CheckBox
+            android:id="@+id/check1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="从不遗尿" />
+
+        <CheckBox
+            android:id="@+id/check2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="在睡着时遗尿" />
+
+        <CheckBox
+            android:id="@+id/check3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="在活动或体育运动时遗尿" />
+
+        <CheckBox
+            android:id="@+id/check4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="在没有明显理由的情况下遗尿" />
+
+        <CheckBox
+            android:id="@+id/check5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="未能达到厕所就会有尿液漏出" />
+
+        <CheckBox
+            android:id="@+id/check6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="在咳嗽或打喷嚏时遗尿" />
+
+        <CheckBox
+            android:id="@+id/check7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="在排尿完和穿好衣服时遗尿" />
+
+        <CheckBox
+            android:id="@+id/check8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="在所有时间内遗尿" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="得分" />
+
+            <EditText
+                android:id="@+id/score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:gravity="center_horizontal"
+                android:minEms="3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="分" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="结果判定：\n                    0分，无症状，不需要任何处理；\n                    1-7分，轻度尿失禁，不需要佩戴尿垫，到尿失禁咨询门诊就诊或电话咨询尿失禁康复师进行自控训练；\n                    8-14分，中度尿失禁，需要佩戴尿垫，到尿失禁门诊就诊进行物理治疗或住院手术治疗\n                    15-21分，重度尿失禁，严重影响正常生活和社交活动分，到专科医院或者老年医院治疗" />
+
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:layout_marginTop="@dimen/activity_margin_32"
+            android:background="@color/colorLightBlue"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="填写完成"
+            android:textColor="@color/colorWhite" />
+
+    </LinearLayout>
+
+
+</ScrollView>

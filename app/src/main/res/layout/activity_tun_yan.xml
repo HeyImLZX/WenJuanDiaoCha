@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -22,18 +23,30 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/activity_margin_8"
+            android:text="吞咽困难分级量表"
+            android:textSize="32sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:padding="@dimen/activity_margin_8"
             android:text="@string/tunyan1" />
 
-        <RadioGroup
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
             android:id="@+id/group1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            app:radio_text1="@string/radioA"
+            app:radio_text2="@string/radioB"
+            app:radio_text3="@string/radioS3"
+            app:radio_text4="@string/radioS4">
 
             <include layout="@layout/two_radio_layout" />
 
-        </RadioGroup>
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
 
         <TextView
             android:layout_width="wrap_content"
@@ -41,15 +54,19 @@
             android:padding="@dimen/activity_margin_8"
             android:text="@string/tunyan2" />
 
-        <RadioGroup
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
             android:id="@+id/group2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            app:radio_text1="@string/radioA"
+            app:radio_text2="@string/radioB"
+            app:radio_text3="@string/radioS3"
+            app:radio_text4="@string/radioS4">
 
             <include layout="@layout/two_radio_layout" />
 
-        </RadioGroup>
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
 
         <TextView
             android:layout_width="wrap_content"
@@ -57,15 +74,19 @@
             android:padding="@dimen/activity_margin_8"
             android:text="@string/tunyan3" />
 
-        <RadioGroup
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
             android:id="@+id/group3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            app:radio_text1="@string/radioA"
+            app:radio_text2="@string/radioB"
+            app:radio_text3="@string/radioS3"
+            app:radio_text4="@string/radioS4">
 
             <include layout="@layout/two_radio_layout" />
 
-        </RadioGroup>
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
 
         <TextView
             android:layout_width="wrap_content"
@@ -73,15 +94,19 @@
             android:padding="@dimen/activity_margin_8"
             android:text="@string/tunyan4" />
 
-        <RadioGroup
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
             android:id="@+id/group4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            app:radio_text1="@string/radioA"
+            app:radio_text2="@string/radioB"
+            app:radio_text3="@string/radioS3"
+            app:radio_text4="@string/radioS4">
 
             <include layout="@layout/two_radio_layout" />
 
-        </RadioGroup>
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
 
         <TextView
             android:layout_width="wrap_content"
@@ -89,15 +114,19 @@
             android:padding="@dimen/activity_margin_8"
             android:text="@string/tunyan5" />
 
-        <RadioGroup
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
             android:id="@+id/group5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            app:radio_text1="@string/radioA"
+            app:radio_text2="@string/radioB"
+            app:radio_text3="@string/radioS3"
+            app:radio_text4="@string/radioS4">
 
             <include layout="@layout/two_radio_layout" />
 
-        </RadioGroup>
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
 
         <TextView
             android:layout_width="wrap_content"
@@ -105,15 +134,19 @@
             android:padding="@dimen/activity_margin_8"
             android:text="@string/tunyan6" />
 
-        <RadioGroup
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
             android:id="@+id/group6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            app:radio_text1="@string/radioA"
+            app:radio_text2="@string/radioB"
+            app:radio_text3="@string/radioS3"
+            app:radio_text4="@string/radioS4">
 
             <include layout="@layout/two_radio_layout" />
 
-        </RadioGroup>
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
 
         <TextView
             android:layout_width="wrap_content"
@@ -121,15 +154,19 @@
             android:padding="@dimen/activity_margin_8"
             android:text="@string/tunyan7" />
 
-        <RadioGroup
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
             android:id="@+id/group7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            app:radio_text1="@string/radioA"
+            app:radio_text2="@string/radioB"
+            app:radio_text3="@string/radioS3"
+            app:radio_text4="@string/radioS4">
 
             <include layout="@layout/two_radio_layout" />
 
-        </RadioGroup>
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
 
         <TextView
             android:layout_width="wrap_content"
@@ -137,15 +174,19 @@
             android:padding="@dimen/activity_margin_8"
             android:text="@string/tunyan8" />
 
-        <RadioGroup
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
             android:id="@+id/group8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            app:radio_text1="@string/radioA"
+            app:radio_text2="@string/radioB"
+            app:radio_text3="@string/radioS3"
+            app:radio_text4="@string/radioS4">
 
             <include layout="@layout/two_radio_layout" />
 
-        </RadioGroup>
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
 
         <TextView
             android:layout_width="wrap_content"
@@ -153,15 +194,19 @@
             android:padding="@dimen/activity_margin_8"
             android:text="@string/tunyan9" />
 
-        <RadioGroup
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
             android:id="@+id/group9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            app:radio_text1="@string/radioA"
+            app:radio_text2="@string/radioB"
+            app:radio_text3="@string/radioS3"
+            app:radio_text4="@string/radioS4">
 
             <include layout="@layout/two_radio_layout" />
 
-        </RadioGroup>
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
 
         <TextView
             android:layout_width="wrap_content"
@@ -169,16 +214,49 @@
             android:padding="@dimen/activity_margin_8"
             android:text="@string/tunyan10" />
 
-        <RadioGroup
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
             android:id="@+id/group10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            app:radio_text1="@string/radioA"
+            app:radio_text2="@string/radioB"
+            app:radio_text3="@string/radioS3"
+            app:radio_text4="@string/radioS4">
 
             <include layout="@layout/two_radio_layout" />
 
-        </RadioGroup>
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="得分" />
+
+            <EditText
+                android:id="@+id/score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:gravity="center_horizontal"
+                android:minEms="3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="分" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="结果判定：每项各得1分，≥9分，基本痊愈；6-8分，明显好转；3-5分好转；1-2分，无效" />
 
         <Button
             android:id="@+id/add"

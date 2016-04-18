@@ -1,12 +1,456 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+
     tools:context="com.ice.wenjuandiaocha.activity.TinettiActivity">
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/activity_margin_8"
+            android:text="平衡量表（Tinetti）"
+            android:textSize="32sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="开始状态：受试者坐在一把硬的椅子上，进行下面的测试" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/tinetti1" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="在椅子上倾斜或滑动"
+            app:radio_text2="稳定、安全"
+            app:radio_text3=""
+            app:radio_text4="">
+
+            <include layout="@layout/two_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/tinetti2" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="必须有帮助"
+            app:radio_text2="能，用臂辅助"
+            app:radio_text3="不用臂辅助既能立起"
+            app:radio_text4="">
+
+            <include layout="@layout/three_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/tinetti3" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="必须有帮助"
+            app:radio_text2="能，需要&lt;1次的尝试"
+            app:radio_text3=""
+            app:radio_text4="">
+
+            <include layout="@layout/two_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/tinetti4" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:radio_text1="不稳（摆架子、移动足、身体摇晃）"
+            app:radio_text2="稳但是用挂账或其他支持"
+            app:radio_text3="稳，不需要拐杖或其他支持"
+            app:radio_text4="">
+
+            <include layout="@layout/three_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/tinetti5" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:radio_text1="不稳"
+            app:radio_text2="稳，但两足距离增宽（足跟间距）10cm，使用拐杖或其他支持"
+            app:radio_text3="两足间距窄，不需要支持"
+            app:radio_text4="">
+
+            <include layout="@layout/three_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/tinetti6" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="开始即倾倒"
+            app:radio_text2="摇摆、抓物体和人来保持平衡"
+            app:radio_text3="稳定"
+            app:radio_text4="">
+
+            <include layout="@layout/three_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/tinetti7" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="不稳"
+            app:radio_text2="稳"
+            app:radio_text3=""
+            app:radio_text4="">
+
+            <include layout="@layout/two_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/tinetti8" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="步伐不连续"
+            app:radio_text2="步伐连续"
+            app:radio_text3=""
+            app:radio_text4="">
+
+            <include layout="@layout/two_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/tinetti9" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="不稳（摇摆、抓物）"
+            app:radio_text2="稳定"
+            app:radio_text3=""
+            app:radio_text4="">
+
+            <include layout="@layout/two_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/tinetti10" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="不安全（距离判断食物、跌进椅子）"
+            app:radio_text2="用上肢或移动不顺畅"
+            app:radio_text3="安全、移动顺畅"
+            app:radio_text4="">
+
+            <include layout="@layout/three_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/activity_margin_8"
+            android:text="步态量表（Tinetti）"
+            android:textSize="32sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/tinetti11" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="有些犹豫或多次尝试后开始"
+            app:radio_text2="毫不犹豫"
+            app:radio_text3=""
+            app:radio_text4="">
+
+            <include layout="@layout/two_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/tinetti12" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:radio_text1="右足迈出的距离没超过对侧站立的左足"
+            app:radio_text2="右足迈出的距离超过对侧站立的左足"
+            app:radio_text3="左足迈出的距离没超过对侧站立的右足"
+            app:radio_text4="左足迈出的距离超过对侧站立的右足">
+
+            <include layout="@layout/four_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/tinetti13" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:radio_text1="右足不能完全离开地板"
+            app:radio_text2="右足能完全离开地板"
+            app:radio_text3="左足不能完全离开地板"
+            app:radio_text4="左足能完全离开地板">
+
+            <include layout="@layout/four_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/tinetti14" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="左右步幅不相等（估计）"
+            app:radio_text2="左右步幅几乎相等"
+            app:radio_text3=""
+            app:radio_text4="">
+
+            <include layout="@layout/two_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/tinetti15" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="迈步停顿或不连续"
+            app:radio_text2="迈步基本是连续的"
+            app:radio_text3=""
+            app:radio_text4="">
+
+            <include layout="@layout/two_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/tinetti16" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="明显偏离"
+            app:radio_text2="中度偏离或使用步行辅助器"
+            app:radio_text3="直线无需步行辅助器"
+            app:radio_text4="">
+
+            <include layout="@layout/three_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/tinetti17" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:radio_text1="明显摇晃或使用步行辅助器"
+            app:radio_text2="不要慌，但行走时膝盖或背部完全，或张开双臂"
+            app:radio_text3="不摇晃，不弯曲，不使用臂，不使用步行器"
+            app:radio_text4="">
+
+            <include layout="@layout/three_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="@string/tinetti18" />
+
+        <com.ice.wenjuandiaocha.util.FourRadioGroup
+            android:id="@+id/group18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:radio_text1="行走时双足跟几乎相碰"
+            app:radio_text2="双足跟分离"
+            app:radio_text3=""
+            app:radio_text4="">
+
+            <include layout="@layout/two_radio_layout" />
+
+        </com.ice.wenjuandiaocha.util.FourRadioGroup>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="得分" />
+
+            <EditText
+                android:id="@+id/score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:gravity="center_horizontal"
+                android:minEms="3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="分" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:text="结果判定：\n                  总分低于19分跌倒的危险性高；\n                  总分在19-24分之间表明有跌倒的危险性；" />
+
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:layout_marginTop="@dimen/activity_margin_32"
+            android:background="@color/colorLightBlue"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="填写完成"
+            android:textColor="@color/colorWhite" />
+    </LinearLayout>
+</ScrollView>

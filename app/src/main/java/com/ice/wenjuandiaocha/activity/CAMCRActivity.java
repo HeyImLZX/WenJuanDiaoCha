@@ -3,6 +3,7 @@ package com.ice.wenjuandiaocha.activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioGroup;
 
 import com.ice.wenjuandiaocha.R;
@@ -40,8 +41,14 @@ public class CAMCRActivity extends AppCompatActivity {
     FourRadioGroup group10;
     @Bind(R.id.group11)
     FourRadioGroup group11;
+    @Bind(R.id.score)
+    EditText score;
 
-    ArrayList<RadioGroup> groupList = new ArrayList<RadioGroup>();
+    int groupNum = 11;
+    ArrayList<FourRadioGroup> groupList = new ArrayList<FourRadioGroup>();
+    StringBuilder resultSb = new StringBuilder();
+    int scoreValue = 0;
+    boolean isScored = false;//是否计算了分数
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,25 +73,23 @@ public class CAMCRActivity extends AppCompatActivity {
     @OnClick(R.id.add)
     public void onClick() {
 
-        group1.getSelectRadio();
-        StringBuilder sb = new StringBuilder();
+        if (isScored)//分数计算完成
+        {
+            finish();
+        } else {
 
-        int score = 0;
-        for (int i = 0; i < 11; i++) {
-            int chose = groupList.get(i).getCheckedRadioButtonId();
-            //chose = chose == 0 ? 4 : chose;
-            sb.append(chose);
+            for (int i = 0; i < groupNum; i++) {
+                int chose = groupList.get(i).getSelectRadio();
+                // chose = chose == 0 ? 4 : chose;
+                resultSb.append(chose);
+                scoreValue = scoreValue + chose;
 
-            if (i == 4 || i == 8 || i == 12 || i == 16 || i == 18) {//5 9 13 17 19 都-1
-                score = score + 5 - chose;
-
-            } else
-                score = score + chose;
+            }
+            score.setText(scoreValue + "");
+            isScored = true;
+            System.out.println(resultSb.toString());
+            System.out.println(scoreValue);
 
         }
-
-        System.out.println(sb.toString());
-        System.out.println((int) (score * 1.25));
-        finish();
     }
 }

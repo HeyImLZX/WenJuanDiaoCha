@@ -174,6 +174,32 @@
     <string name="iciqsf4">4.什么时候发生遗尿？</string>
 
 
+    <string name="psqi1">1.近1个月，晚上上床睡觉通常</string>
+    <string name="psqi2">2.近1个月，从上床到入睡通常需要</string>
+    <string name="psqi3">3.近1个月，通常早上</string>
+    <string name="psqi4">4.近1个月，每夜通常实际睡眠</string>
+    <string name="psqi45">5.近1个月，因下列情况影响睡眠而烦恼</string>
+    <string name="psqi5">（1）.入睡困难（30分钟内不能入睡）</string>
+    <string name="psqi6">（2）.夜间易醒或早醒</string>
+    <string name="psqi7">（3）.夜间去厕所</string>
+    <string name="psqi8">（4）.呼吸不畅</string>
+    <string name="psqi9">（5）.咳嗽或鼾声高</string>
+    <string name="psqi10">（6）.感觉冷</string>
+    <string name="psqi11">（7）.感觉热</string>
+    <string name="psqi12">（8）.做噩梦</string>
+    <string name="psqi13">（9）.疼痛不适</string>
+    <string name="psqi14">（10）.其他影响睡眠的事情</string>
+    <string name="psqi15">6.近1个月，总的来说，您认为自己的睡眠治疗</string>
+    <string name="psqi16">7.近1个月，您用药物催眠的情况</string>
+    <string name="psqi17">8.近1个月，您常感到困倦，难以保持清醒状态吗？</string>
+    <string name="psqi18">9.近1个月，您做事的精力不足吗？</string>
+    <string name="psqi19">10.近1个月，有无下列情况（请询问同寝室的人）</string>
+    <string name="psqi20">（1）.高声打鼾</string>
+    <string name="psqi21">（2）.睡眠中较长时间的呼吸暂停</string>
+    <string name="psqi22">（3）.睡眠中腿部抽动或痉挛</string>
+    <string name="psqi23">（4）.睡眠中出现不能辨认方向或意识模糊的情况</string>
+    <string name="psqi24">（5）.睡眠中存在其他影响睡眠的特殊情况</string>
+
     <string name="fra1">1.步态异常/假肢</string>
     <string name="fra2">2.行走需要辅助设施</string>
     <string name="fra3">3.行走需要人帮助</string>
@@ -302,6 +328,25 @@
     <string name="gdsdd19">19.心境近乎妄想（幻想贫困，疾病，损失）</string>
 
 
+    <string name="tinetti1">1.坐平衡</string>
+    <string name="tinetti2">2.起立</string>
+    <string name="tinetti3">3.试图站立</string>
+    <string name="tinetti4">4.即可站立平衡（开始5秒）</string>
+    <string name="tinetti5">5.站立平衡</string>
+    <string name="tinetti6">6.用肘推（受试者双足尽可能靠近，测试者用手掌轻推受试者）</string>
+    <string name="tinetti7">7.鼻炎（双足站立要求同6）</string>
+    <string name="tinetti8">8.旋转360</string>
+    <string name="tinetti9">9.旋转360</string>
+    <string name="tinetti10">10.坐下</string>
+    <string name="tinetti11">1.起步步态（指令后立刻开始）</string>
+    <string name="tinetti12">2.步伐的长度</string>
+    <string name="tinetti13">3.步伐的高度</string>
+    <string name="tinetti14">4.步态均匀</string>
+    <string name="tinetti15">5.步态的连续性</string>
+    <string name="tinetti16">6.路径（用宽度为30cm的地板砖进行估计，在患者连续走3m以上后观察其走路情况）</string>
+    <string name="tinetti17">7.躯干</string>
+    <string name="tinetti18">8.足跟距离</string>
+    1
     <string name="adl1">1.行走</string>
     <string name="adl2">2.吃饭</string>
     <string name="adl3">3.穿衣</string>

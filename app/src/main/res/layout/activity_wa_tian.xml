@@ -3,70 +3,111 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:focusable="true"
-    android:focusableInTouchMode="true"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".activity.WaTianBackActivity"
-    android:orientation="vertical">
+    tools:context=".activity.WaTianBackActivity">
 
     <TextView
         android:layout_width="wrap_content"
-        android:padding="@dimen/activity_margin_8"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="@dimen/activity_margin_8"
+        android:text="洼田饮水实验"
+        android:textSize="32sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/activity_margin_8"
         android:text="患者端坐，喝下30ml温开水，观察所需时间和呛咳情况" />
 
-    <RadioGroup
+    <com.ice.wenjuandiaocha.util.SevenRadioGroup
         android:id="@+id/wt_group"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:radio_text1="能够顺利地1次将水咽下"
+        app:radio_text2="分两次以上，能不呛咳的咽下"
+        app:radio_text3="能一次咽下，但有呛咳"
+        app:radio_text4="分两次以上咽下，但有呛咳"
+        app:radio_text5="频繁呛咳，不能全部咽下"
+        app:radio_text6="剧烈疼痛，但不一定哭泣"
+        app:radio_text7="剧烈疼痛，但不一定哭泣">
 
         <RadioButton
-            android:id="@+id/wt_btn1"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/activity_margin_8"
             android:text="能够顺利地1次将水咽下" />
 
         <RadioButton
-            android:id="@+id/wt_btn2"
+
             android:layout_width="wrap_content"
-            android:padding="@dimen/activity_margin_8"
             android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
             android:text="分两次以上，能不呛咳的咽下" />
 
         <RadioButton
-            android:id="@+id/wt_btn3"
+
             android:layout_width="wrap_content"
-            android:padding="@dimen/activity_margin_8"
             android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
             android:text="能一次咽下，但有呛咳" />
 
         <RadioButton
-            android:id="@+id/wt_btn4"
+
             android:layout_width="wrap_content"
-            android:padding="@dimen/activity_margin_8"
             android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
             android:text="分两次以上咽下，但有呛咳" />
 
         <RadioButton
-            android:id="@+id/wt_btn5"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/activity_margin_8"
             android:text="频繁呛咳，不能全部咽下" />
 
 
-    </RadioGroup>
+    </com.ice.wenjuandiaocha.util.SevenRadioGroup>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="评价等级" />
+
+        <EditText
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:minEms="3"
+
+            tools:text="cas" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="级" />
+    </LinearLayout>
+
 
     <Button
-        android:layout_marginTop="@dimen/activity_margin_32"
         android:id="@+id/add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_columnSpan="2"
+        android:layout_marginTop="@dimen/activity_margin_32"
         android:background="@color/colorLightBlue"
         android:padding="@dimen/activity_vertical_margin"
         android:text="填写完成"

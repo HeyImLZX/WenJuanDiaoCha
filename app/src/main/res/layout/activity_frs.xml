@@ -1,62 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
+
     tools:context="com.ice.wenjuandiaocha.activity.FRSActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:textSize="32sp"
+            android:layout_gravity="center_horizontal"
+            android:text="面部表情分级评分（FRS）" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="@dimen/activity_margin_8"
         android:text="笑脸图形" />
 
-    <RadioGroup
-        android:id="@+id/group8"
+        <com.ice.wenjuandiaocha.util.SevenRadioGroup
+            android:id="@+id/group1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+            android:orientation="vertical"
+            app:radio_text1="非常愉快，无疼痛"
+            app:radio_text2="有一点疼痛"
+            app:radio_text3="轻微疼痛"
+            app:radio_text4="疼痛较明显"
+            app:radio_text5="疼痛较严重"
+            app:radio_text6="剧烈疼痛，但不一定哭泣"
+            app:radio_text7="剧烈疼痛，但不一定哭泣">
 
         <RadioButton
+            android:drawableLeft="@drawable/happy_01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/activity_margin_8"
             android:text="非常愉快，无疼痛" />
 
         <RadioButton
+            android:drawableLeft="@drawable/happy_02"
             android:layout_width="wrap_content"
             android:padding="@dimen/activity_margin_8"
             android:layout_height="wrap_content"
             android:text="有一点疼痛" />
 
         <RadioButton
+            android:drawableLeft="@drawable/happy_03"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/activity_margin_8"
             android:text="轻微疼痛" />
 
         <RadioButton
+            android:drawableLeft="@drawable/happy_04"
             android:layout_width="wrap_content"
             android:padding="@dimen/activity_margin_8"
             android:layout_height="wrap_content"
             android:text="疼痛较明显" />
 
         <RadioButton
+            android:drawableLeft="@drawable/happy_05"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/activity_margin_8"
             android:text="疼痛较严重" />
 
         <RadioButton
+            android:drawableLeft="@drawable/happy_06"
             android:layout_width="wrap_content"
             android:padding="@dimen/activity_margin_8"
             android:layout_height="wrap_content"
             android:text="剧烈疼痛，但不一定哭泣" />
 
-    </RadioGroup>
-</LinearLayout>
+        </com.ice.wenjuandiaocha.util.SevenRadioGroup>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="得分" />
+
+            <EditText
+                android:id="@+id/score"
+                android:gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:editable="false"
+                android:layout_height="wrap_content"
+                android:minEms="3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="分" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:layout_marginTop="@dimen/activity_margin_32"
+            android:background="@color/colorLightBlue"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="填写完成"
+            android:textColor="@color/colorWhite" />
+
+    </LinearLayout>
+</ScrollView>
