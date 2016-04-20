@@ -51,11 +51,20 @@ public class ICIQSFActivity extends AppCompatActivity {
     int scoreValue = 0;
     boolean isScored = false;//是否计算了分数
 
+    String timeStamp = "2798";
+    String personId = "2798";
+    String tableId = "4";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_iciqsf);
         ButterKnife.bind(this);
+
+        if (getIntent().getExtras() != null) {
+            timeStamp = getIntent().getExtras().getString("timeStamp");
+            personId = getIntent().getExtras().getString("personId");
+        }
 
         groupList.add(group1);
         groupList.add(group2);
@@ -68,6 +77,7 @@ public class ICIQSFActivity extends AppCompatActivity {
 
         if (isScored)//分数计算完成
         {
+            setResult(RESULT_OK, getIntent());
             finish();
         } else {
 

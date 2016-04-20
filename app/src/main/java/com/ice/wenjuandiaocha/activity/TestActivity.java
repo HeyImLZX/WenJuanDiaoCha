@@ -17,8 +17,8 @@ public class TestActivity extends AppCompatActivity {
 
     private ListView list;
     ArrayList<String> arrayList = new ArrayList<String>();
-    String[] strings = {"MNA", "洼田饮水", "吞咽困难", "尿失禁ICIQSF", "面部表情FRS", "匹兹堡睡眠PSQI", "跌到风险FRA", "谵妄CAMCR", "简易智力Minicog", "简易智能MMSE", "焦虑Zung", "抑郁Zung", "GDS15", "GDSDD", "日常生活ADL", "功能独立FIM", "Tinwtti平衡量步态量", "APGAR家庭功能", "老年社会FAQ"};
-    Class[] activityArray = {MNAActivity.class, WaTianBackActivity.class, TunYanActivity.class, ICIQSFActivity.class,
+    String[] strings = {"simple", "MNA", "洼田饮水", "吞咽困难", "尿失禁ICIQSF", "面部表情FRS", "匹兹堡睡眠PSQI", "跌到风险FRA", "谵妄CAMCR", "简易智力Minicog", "简易智能MMSE", "焦虑Zung", "抑郁Zung", "GDS15", "GDSDD", "日常生活ADL", "功能独立FIM", "Tinwtti平衡量步态量", "APGAR家庭功能", "老年社会FAQ"};
+    Class[] activityArray = {SimpleInfoBackActivity.class, MNAActivity.class, WaTianBackActivity.class, TunYanActivity.class, ICIQSFActivity.class,
             FRSActivity.class, PSQIActivity.class, FRAActivity.class, CAMCRActivity.class, MiniCogActivity.class, MMSEActivity.class, ZungActivity.class, ZungSDSActivity.class, GDSActivity.class, GDSDDActivity.class, ADLActivity.class, FIMActivity.class, TinettiActivity.class, APGARActivity.class, FAQActivity.class};
 
     @Override

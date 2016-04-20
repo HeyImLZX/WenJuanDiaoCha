@@ -5,10 +5,14 @@
     android:layout_height="match_parent"
     android:focusable="true"
     android:focusableInTouchMode="true"
+
+
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+
+
     tools:context=".activity.SimpleInfoBackActivity">
 
     <GridLayout
@@ -20,13 +24,48 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="@dimen/activity_margin_8"
+            android:textSize="32sp"
             android:layout_columnSpan="2"
-            android:text="1.营养" />
+
+            android:layout_gravity="center_horizontal"
+            android:text="简易老年医学评估筛选表" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="过去三个月您的体重是否有减轻>5%" />
+            android:layout_columnSpan="2"
+            android:text="疾病" />
+
+        <EditText
+            android:id="@+id/disease"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:text="使用药物" />
+
+        <EditText
+            android:id="@+id/medicine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:text="营养" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.过去三个月您的体重是否有减轻>5%" />
 
 
         <CheckBox
@@ -44,7 +83,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="摄入量有无减少" />
+            android:text="2.摄入量有无减少" />
 
         <CheckBox
             android:id="@+id/one_two"
@@ -60,7 +99,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="BMI小于18.5" />
+            android:text="3.BMI小于18.5" />
 
         <CheckBox
             android:id="@+id/one_three"
@@ -89,12 +128,12 @@
             android:layout_height="wrap_content"
             android:layout_columnSpan="2"
             android:paddingTop="@dimen/activity_margin_32"
-            android:text="2.牙齿" />
+            android:text="牙齿" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="牙齿及牙龈、咀嚼能力评估" />
+            android:text="1.牙齿及牙龈、咀嚼能力评估" />
 
         <CheckBox
             android:id="@+id/two_one"
@@ -110,7 +149,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="呛咳" />
+            android:text="2.呛咳" />
 
 
         <CheckBox
@@ -135,17 +174,28 @@
             android:textColor="@color/colorWhite"
             android:visibility="gone" />
 
+        <Button
+            android:id="@+id/detail2B"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:background="@color/colorLightBlue"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="详细测试"
+            android:textColor="@color/colorWhite"
+            android:visibility="gone" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnSpan="2"
             android:paddingTop="@dimen/activity_margin_32"
-            android:text="3.听力" />
+            android:text="听力" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="在病人侧方距耳朵15-30cm处轻声说话" />
+            android:text="1.在病人侧方距耳朵15-30cm处轻声说话" />
 
         <CheckBox
             android:id="@+id/three_one"
@@ -161,7 +211,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="听力测量仪设定在40分贝，测定1000及2000Hz时的听力" />
+            android:text="2.听力测量仪设定在40分贝，测定1000及2000Hz时的听力" />
 
         <CheckBox
             android:id="@+id/three_two"
@@ -179,12 +229,12 @@
             android:layout_height="wrap_content"
             android:layout_columnSpan="2"
             android:paddingTop="@dimen/activity_margin_32"
-            android:text="4.视力" />
+            android:text="视力" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="您从事日常活动（看电视、看书报，会因为视力不佳而受影响吗？）" />
+            android:text="1.您从事日常活动（看电视、看书报，会因为视力不佳而受影响吗？）" />
 
         <CheckBox
             android:id="@+id/four_one"
@@ -200,7 +250,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="视力量表检查" />
+            android:text="2.视力量表检查" />
 
         <CheckBox
             android:id="@+id/four_two"
@@ -219,12 +269,12 @@
             android:layout_height="wrap_content"
             android:layout_columnSpan="2"
             android:paddingTop="@dimen/activity_margin_32"
-            android:text="5.尿失禁" />
+            android:text="尿失禁" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="在过去一年中，您是否有不自主渗尿而弄湿裤子的情形？" />
+            android:text="1.在过去一年中，您是否有不自主渗尿而弄湿裤子的情形？" />
 
         <CheckBox
             android:id="@+id/five_one"
@@ -240,7 +290,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="不由自主的漏尿天数是否超过6天以上？" />
+            android:text="2.不由自主的漏尿天数是否超过6天以上？" />
 
         <CheckBox
             android:id="@+id/five_two"
@@ -256,7 +306,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="夜尿是否大于2次" />
+            android:text="3.夜尿是否大于2次" />
 
         <CheckBox
             android:id="@+id/five_three"
@@ -285,12 +335,12 @@
             android:layout_height="wrap_content"
             android:layout_columnSpan="2"
             android:paddingTop="@dimen/activity_margin_32"
-            android:text="6.便秘" />
+            android:text="便秘" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="排便次数和性状？" />
+            android:text="1.排便次数和性状？" />
 
         <CheckBox
             android:id="@+id/six_one"
@@ -306,7 +356,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="是否费力、费时？" />
+            android:text="2.是否费力、费时？" />
 
         <CheckBox
             android:id="@+id/six_two"
@@ -325,12 +375,12 @@
             android:layout_height="wrap_content"
             android:layout_columnSpan="2"
             android:paddingTop="@dimen/activity_margin_32"
-            android:text="7.慢性疼痛" />
+            android:text="慢性疼痛" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="疼痛的部位" />
+            android:text="1.疼痛的部位" />
 
         <CheckBox
             android:id="@+id/seven_one"
@@ -359,12 +409,12 @@
             android:layout_height="wrap_content"
             android:layout_columnSpan="2"
             android:paddingTop="@dimen/activity_margin_32"
-            android:text="8.睡眠" />
+            android:text="睡眠" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="睡眠情况：入睡难、早醒、易醒" />
+            android:text="1.睡眠情况：入睡难、早醒、易醒" />
 
         <CheckBox
             android:id="@+id/eight_one"
@@ -380,7 +430,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="睡眠时间、次日疲劳感" />
+            android:text="2.睡眠时间、次日疲劳感" />
 
         <CheckBox
             android:id="@+id/eight_two"
@@ -396,7 +446,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="打鼾" />
+            android:text="3.打鼾" />
 
         <CheckBox
             android:id="@+id/eight_three"
@@ -425,12 +475,12 @@
             android:layout_height="wrap_content"
             android:layout_columnSpan="2"
             android:paddingTop="@dimen/activity_margin_32"
-            android:text="9.跌倒" />
+            android:text="跌倒" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="近1年内有无跌倒史" />
+            android:text="1.近1年内有无跌倒史" />
 
         <CheckBox
             android:id="@+id/nine_one"
@@ -446,7 +496,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="询问和观察有无步态异常" />
+            android:text="2.询问和观察有无步态异常" />
 
         <CheckBox
             android:id="@+id/nine_two"
@@ -475,12 +525,12 @@
             android:layout_height="wrap_content"
             android:layout_columnSpan="2"
             android:paddingTop="@dimen/activity_margin_32"
-            android:text="10.谵妄" />
+            android:text="谵妄" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="急性病程和波动性病程" />
+            android:text="1.急性病程和波动性病程" />
 
         <CheckBox
             android:id="@+id/ten_one"
@@ -496,7 +546,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="注意力不集中" />
+            android:text="2.注意力不集中" />
 
         <CheckBox
             android:id="@+id/ten_two"
@@ -512,7 +562,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="思维混乱" />
+            android:text="3.思维混乱" />
 
         <CheckBox
             android:id="@+id/ten_three"
@@ -528,7 +578,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="意识改变" />
+            android:text="4.意识改变" />
 
         <CheckBox
             android:id="@+id/ten_four"
@@ -551,6 +601,415 @@
             android:text="详细测试"
             android:textColor="@color/colorWhite"
             android:visibility="gone" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:paddingTop="@dimen/activity_margin_32"
+            android:text="记忆" />
+
+        <Button
+            android:id="@+id/detail11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:background="@color/colorLightBlue"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="详细测试"
+            android:textColor="@color/colorWhite" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:paddingTop="@dimen/activity_margin_32"
+            android:text="情感" />
+
+        <Button
+            android:id="@+id/detail12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:background="@color/colorLightBlue"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="HIS详细测试"
+            android:textColor="@color/colorWhite" />
+
+        <Button
+            android:id="@+id/detail13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:background="@color/colorLightBlue"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="SAS详细测试"
+            android:textColor="@color/colorWhite" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:paddingTop="@dimen/activity_margin_32"
+            android:text="抑郁症" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.您对生活基本满意吗" />
+
+        <CheckBox
+            android:id="@+id/fourteen_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2.您是否常常感到厌烦?" />
+
+        <CheckBox
+            android:id="@+id/fourteen_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3.您是否常常感到无论做什么事都没有用？" />
+
+        <CheckBox
+            android:id="@+id/fourteen_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.您是否比较喜欢呆在家里，而不喜欢外出和做新的事？" />
+
+        <CheckBox
+            android:id="@+id/fourteen_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5.您是否觉得您现在活得很没价值？" />
+
+        <CheckBox
+            android:id="@+id/fourteen_five"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+
+        <Button
+            android:id="@+id/detail14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:background="@color/colorLightBlue"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="SDS详细测试"
+            android:textColor="@color/colorWhite"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/detail15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:background="@color/colorLightBlue"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="GDS详细测试"
+            android:textColor="@color/colorWhite"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/detail16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:background="@color/colorLightBlue"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="GDS20详细测试"
+            android:textColor="@color/colorWhite"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:paddingTop="@dimen/activity_margin_32"
+            android:text="活动能力" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:text="您执行下诉活动是否有困难" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.费力活动（快走、骑脚踏车）" />
+
+        <CheckBox
+            android:id="@+id/seventeen_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2.粗重的家务活（如擦窗户或地板）?" />
+
+        <CheckBox
+            android:id="@+id/seventeen_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3.购物？" />
+
+        <CheckBox
+            android:id="@+id/seventeen_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.洗澡？" />
+
+        <CheckBox
+            android:id="@+id/seventeen_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5.穿衣？" />
+
+        <CheckBox
+            android:id="@+id/seventeen_five"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="有" />
+
+
+        <Button
+            android:id="@+id/detail17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:background="@color/colorLightBlue"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="ADL详细测试"
+            android:textColor="@color/colorWhite"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/detail18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:background="@color/colorLightBlue"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="FIM详细测试"
+            android:textColor="@color/colorWhite"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:paddingTop="@dimen/activity_margin_32"
+            android:text="上肢" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.双手举起放于头部后方" />
+
+        <CheckBox
+            android:id="@+id/nineteen_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="可以" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2.拿起笔?" />
+
+        <CheckBox
+            android:id="@+id/nineteen_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="可以" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:paddingTop="@dimen/activity_margin_32"
+            android:text="下肢" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.起立-行走试验：要求病人执行下述动作并计时：\n从椅子起身，尽快往前走三米，再转身走回椅子，然后坐下。&lt;15s" />
+
+        <CheckBox
+            android:id="@+id/twenty_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="可以" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2.平衡试验：\n双足并拢，闭目站立。增加难度，双足前后分开半足或一足距，闭目站立，正常＞10s?" />
+
+        <CheckBox
+            android:id="@+id/twenty_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingBottom="@dimen/activity_margin_8"
+            android:paddingLeft="@dimen/activity_margin_8"
+            android:paddingRight="@dimen/activity_margin_32"
+            android:paddingTop="@dimen/activity_margin_8"
+            android:text="可以" />
+
+
+        <Button
+            android:id="@+id/detail20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:background="@color/colorLightBlue"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="Tin详细测试"
+            android:textColor="@color/colorWhite"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:paddingTop="@dimen/activity_margin_32"
+            android:text="社会支持" />
+
+        <Button
+            android:id="@+id/detail21"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:background="@color/colorLightBlue"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="APGAR详细测试"
+            android:textColor="@color/colorWhite" />
+
+        <Button
+            android:id="@+id/detail22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:background="@color/colorLightBlue"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="FAQ详细测试"
+            android:textColor="@color/colorWhite" />
+
 
         <Button
             android:layout_marginTop="@dimen/activity_margin_32"

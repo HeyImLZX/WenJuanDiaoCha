@@ -38,6 +38,8 @@ public class MyDaoGenerator {
         // 接下来你便可以设置表中的字段：
         note.addIdProperty();
         note.addStringProperty("name").notNull();
+
+        note.addStringProperty("questionId");
         // 与在 Java 中使用驼峰命名法不同，默认数据库中的命名是使用大写和下划线来分割单词的。
         // For example, a property called “creationDate” will become a database column “CREATION_DATE”.
         note.addStringProperty("sex");
@@ -49,7 +51,7 @@ public class MyDaoGenerator {
         note.addStringProperty("provider");
         note.addStringProperty("relation");
         note.addStringProperty("religion");
-        note.addStringProperty("idcard");
+        note.addStringProperty("personId");
         note.addStringProperty("education");
         note.addStringProperty("occupation");
         note.addStringProperty("marriage");
@@ -61,7 +63,60 @@ public class MyDaoGenerator {
         note.addStringProperty("wish1");
         note.addStringProperty("wish2");
 
-        Entity questionResult = schema.addEntity("questionResult");
+        Entity simpleInfo = schema.addEntity("SimpleInfo");
+        // 你也可以重新给表命名
+        // note.setTableName("NODE");
+        // greenDAO 会自动根据实体类的属性值来创建表字段，并赋予默认值
+        // 接下来你便可以设置表中的字段：
+        simpleInfo.addIdProperty();
+        simpleInfo.addStringProperty("questionId").notNull();
+        // 与在 Java 中使用驼峰命名法不同，默认数据库中的命名是使用大写和下划线来分割单词的。
+        // For example, a property called “creationDate” will become a database column “CREATION_DATE”.
+        simpleInfo.addStringProperty("personId");
+
+        simpleInfo.addStringProperty("disease");
+        simpleInfo.addStringProperty("medicine");
+
+        simpleInfo.addBooleanProperty("one1");
+        simpleInfo.addBooleanProperty("one2");
+        simpleInfo.addBooleanProperty("one3");
+        simpleInfo.addBooleanProperty("two1");
+        simpleInfo.addBooleanProperty("two2");
+        simpleInfo.addBooleanProperty("three1");
+        simpleInfo.addBooleanProperty("three2");
+        simpleInfo.addBooleanProperty("four1");
+        simpleInfo.addBooleanProperty("four2");
+        simpleInfo.addBooleanProperty("five1");
+        simpleInfo.addBooleanProperty("five2");
+        simpleInfo.addBooleanProperty("five3");
+        simpleInfo.addBooleanProperty("six1");
+        simpleInfo.addBooleanProperty("six2");
+        simpleInfo.addBooleanProperty("seven1");
+        simpleInfo.addBooleanProperty("eight1");
+        simpleInfo.addBooleanProperty("eight2");
+        simpleInfo.addBooleanProperty("eight3");
+        simpleInfo.addBooleanProperty("nine1");
+        simpleInfo.addBooleanProperty("nine2");
+        simpleInfo.addBooleanProperty("ten1");
+        simpleInfo.addBooleanProperty("ten2");
+        simpleInfo.addBooleanProperty("ten3");
+        simpleInfo.addBooleanProperty("ten4");
+        simpleInfo.addBooleanProperty("fourteen1");
+        simpleInfo.addBooleanProperty("fourteen2");
+        simpleInfo.addBooleanProperty("fourteen3");
+        simpleInfo.addBooleanProperty("fourteen4");
+        simpleInfo.addBooleanProperty("fourteen5");
+        simpleInfo.addBooleanProperty("seventeen1");
+        simpleInfo.addBooleanProperty("seventeen2");
+        simpleInfo.addBooleanProperty("seventeen3");
+        simpleInfo.addBooleanProperty("seventeen4");
+        simpleInfo.addBooleanProperty("seventeen5");
+        simpleInfo.addBooleanProperty("nineteen1");
+        simpleInfo.addBooleanProperty("nineteen2");
+        simpleInfo.addBooleanProperty("twenty1");
+        simpleInfo.addBooleanProperty("twenty2");
+
+        Entity questionResult = schema.addEntity("QuestionResult");
         // 你也可以重新给表命名
         // note.setTableName("NODE");
 
@@ -73,10 +128,14 @@ public class MyDaoGenerator {
         // For example, a property called “creationDate” will become a database column “CREATION_DATE”.
         questionResult.addStringProperty("personId");
 
-        questionResult.addStringProperty("wtResult");
-        questionResult.addStringProperty("wtScore");
-        questionResult.addStringProperty("zungResult");
-        questionResult.addStringProperty("zungScore");
+        questionResult.addStringProperty("tableId");
+        questionResult.addStringProperty("blank");
+        questionResult.addStringProperty("result");
+        questionResult.addStringProperty("score");
+
+
+
+
 
 
     }

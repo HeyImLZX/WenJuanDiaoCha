@@ -7,6 +7,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ice.wenjuandiaocha.Application.MyApplication;
 import com.ice.wenjuandiaocha.R;
 import com.ice.wenjuandiaocha.base.BaseBackActivity;
 import com.ice.wenjuandiaocha.util.SevenRadioGroup;
@@ -19,7 +20,7 @@ import butterknife.OnClick;
 
 public class WaTianBackActivity extends BaseBackActivity {
 
-
+    private static final String TAG = "WaTianBackActivity";
     @Bind(R.id.wt_group)
     SevenRadioGroup wtGroup;
     @Bind(R.id.score)
@@ -35,11 +36,23 @@ public class WaTianBackActivity extends BaseBackActivity {
     int scoreValue = 0;
     boolean isScored = false;//是否计算了分数
 
+    String timeStamp = "2798";
+    String personId = "2798";
+    String tableId = "2";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wa_tian);
         ButterKnife.bind(this);
+
+
+        if (getIntent().getExtras() != null) {
+            timeStamp = getIntent().getExtras().getString("timeStamp");
+            personId = getIntent().getExtras().getString("personId");
+        }
+
 
         groupList.add(wtGroup);
 
@@ -71,7 +84,7 @@ public class WaTianBackActivity extends BaseBackActivity {
             isScored = true;
             System.out.println(resultSb.toString());
             System.out.println(scoreValue);
-
+            MyApplication.insertDao(timeStamp, personId, tableId, "", resultSb.toString(), String.valueOf(scoreValue), TAG);
         }
 
 

@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.ice.wenjuandiaocha.Application.MyApplication;
 import com.ice.wenjuandiaocha.R;
 import com.ice.wenjuandiaocha.util.FourRadioGroup;
 
@@ -15,7 +16,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class PSQIActivity extends AppCompatActivity {
-
+    private static final String TAG = "PSQIActivity";
     @Bind(R.id.edit_text_1)
     EditText editText1;
     @Bind(R.id.edit_text_2)
@@ -73,12 +74,21 @@ public class PSQIActivity extends AppCompatActivity {
     int scoreValue = 0;
     boolean isScored = false;//是否计算了分数
 
+    String timeStamp = "2798";
+    String personId = "2798";
+    String tableId = "6";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_psqi);
         ButterKnife.bind(this);
 
+
+        if (getIntent().getExtras() != null) {
+            timeStamp = getIntent().getExtras().getString("timeStamp");
+            personId = getIntent().getExtras().getString("personId");
+        }
 
         groupList.add(group5);
         groupList.add(group6);
@@ -108,6 +118,7 @@ public class PSQIActivity extends AppCompatActivity {
 
         if (isScored)//分数计算完成
         {
+            setResult(RESULT_OK, getIntent());
             finish();
         } else {
             int j = 0;
@@ -127,6 +138,7 @@ public class PSQIActivity extends AppCompatActivity {
             System.out.println(resultSb.toString());
             System.out.println(scoreValue);
 
+            MyApplication.insertDao(timeStamp, personId, tableId, editText1.getText().toString() + ";" + editText2.getText().toString() + ";" + editText3.getText().toString() + ";" + editText4.getText().toString(), resultSb.toString(), String.valueOf(scoreValue), TAG);
         }
 
     }

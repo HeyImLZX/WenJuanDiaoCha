@@ -2,9 +2,13 @@ package com.ice.wenjuandiaocha.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.ice.greendao.QuestionResult;
+import com.ice.greendao.SimpleInfo;
+import com.ice.wenjuandiaocha.Application.MyApplication;
 import com.ice.wenjuandiaocha.R;
 import com.ice.wenjuandiaocha.util.FourRadioGroup;
 
@@ -16,6 +20,7 @@ import butterknife.OnClick;
 
 public class MNAActivity extends AppCompatActivity {
 
+    private static final String TAG = "MNAActivity";
     @Bind(R.id.group1)
     FourRadioGroup group1;
     @Bind(R.id.group2)
@@ -63,11 +68,20 @@ public class MNAActivity extends AppCompatActivity {
     double scoreValue = 0;
     boolean isScored = false;//是否计算了分数
 
+    String timeStamp = "2798";
+    String personId = "2798";
+    String tableId = "1";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mna);
         ButterKnife.bind(this);
+
+        if (getIntent().getExtras() != null) {
+            timeStamp = getIntent().getExtras().getString("timeStamp");
+            personId = getIntent().getExtras().getString("personId");
+        }
 
         groupList.add(group1);
         groupList.add(group2);
@@ -94,6 +108,7 @@ public class MNAActivity extends AppCompatActivity {
 
         if (isScored)//分数计算完成
         {
+            setResult(RESULT_OK, getIntent());
             finish();
         } else {
 
@@ -125,7 +140,13 @@ public class MNAActivity extends AppCompatActivity {
             System.out.println(resultSb.toString());
             System.out.println(scoreValue);
 
+
+            MyApplication.insertDao(timeStamp, personId, tableId, "", resultSb.toString(), String.valueOf(scoreValue), TAG);
+
+
         }
 
     }
+
+
 }

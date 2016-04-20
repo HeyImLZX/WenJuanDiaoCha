@@ -2,8 +2,6 @@ package com.ice.wenjuandiaocha.activity;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,10 +14,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ice.greendao.DaoMaster;
-import com.ice.greendao.DaoSession;
 import com.ice.greendao.PersonInfo;
-import com.ice.greendao.PersonInfoDao;
+import com.ice.wenjuandiaocha.Application.MyApplication;
 import com.ice.wenjuandiaocha.R;
 import com.ice.wenjuandiaocha.base.BaseBackActivity;
 import com.ice.wenjuandiaocha.util.DatePickerFragment;
@@ -81,10 +77,8 @@ public class PersonInfoBackActivity extends BaseBackActivity implements DatePick
     CheckBox accident4;
     private DatePickerFragment newFragment;
 
-    private SQLiteDatabase db;
-    private DaoMaster daoMaster;
-    private DaoSession daoSession;
-    private Cursor cursor;
+
+    long timeStamp = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,12 +87,8 @@ public class PersonInfoBackActivity extends BaseBackActivity implements DatePick
         ButterKnife.bind(this);
 
         setTitle("基本信息");
-        // 官方推荐将获取 DaoMaster 对象的方法放到 Application 层，这样将避免多次创建生成 Session 对象
-        setupDatabase();
-        // 获取 NoteDao 对象
-        getPersonInfoDao();
 
-        cursor = db.query(getPersonInfoDao().getTablename(), getPersonInfoDao().getAllColumns(), null, null, null, null, null);
+//        cursor = db.query(getPersonInfoDao().getTablename(), getPersonInfoDao().getAllColumns(), null, null, null, null, null);
 
 
         ArrayAdapter<CharSequence> sexAdapter = ArrayAdapter.createFromResource(this,
@@ -180,9 +170,13 @@ public class PersonInfoBackActivity extends BaseBackActivity implements DatePick
                         || idcard.getText().toString().isEmpty()) {
                     Toast.makeText(PersonInfoBackActivity.this, "请完整填写信息", Toast.LENGTH_SHORT).show();
                 } else {
+                    timeStamp = System.currentTimeMillis();
                     insertDao();
 
                     Intent intent = new Intent(PersonInfoBackActivity.this, SimpleInfoBackActivity.class);
+                    intent.putExtra("timeStamp", String.valueOf(timeStamp));
+                    intent.putExtra("personId", idcard.getText().toString());
+
                     startActivity(intent);
                 }
             }
@@ -219,7 +213,7 @@ public class PersonInfoBackActivity extends BaseBackActivity implements DatePick
         }
 
         // 插入操作，简单到只要你创建一个 Java 对象
-        PersonInfo note = new PersonInfo(null, name.getText().toString(), sex.getSelectedItem().toString(), birthday.getText().toString()
+        PersonInfo note = new PersonInfo(null, name.getText().toString(), String.valueOf(timeStamp), sex.getSelectedItem().toString(), birthday.getText().toString()
                 , height.getText().toString()
                 , weight.getText().toString()
                 , provider.getText().toString()
@@ -236,59 +230,27 @@ public class PersonInfoBackActivity extends BaseBackActivity implements DatePick
                 , accidentResult.toString()
                 , wish1.getText().toString()
                 , wish2.getText().toString());
-        getPersonInfoDao().insert(note);
+        MyApplication.getPersonInfoDao().insert(note);
         Log.d(TAG, "Inserted new note, ID: " + note.getId());
-        cursor.requery();
+        //   cursor.requery();
     }
 
-    private void setupDatabase() {
-        // 通过 DaoMaster 的内部类 DevOpenHelper，你可以得到一个便利的 SQLiteOpenHelper 对象。
-        // 可能你已经注意到了，你并不需要去编写「CREATE TABLE」这样的 SQL 语句，因为 greenDAO 已经帮你做了。
-        // 注意：默认的 DaoMaster.DevOpenHelper 会在数据库升级时，删除所有的表，意味着这将导致数据的丢失。
-        // 所以，在正式的项目中，你还应该做一层封装，来实现数据库的安全升级。
-        DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(this, "notes-db", null);
-        db = helper.getWritableDatabase();
-        // 注意：该数据库连接属于 DaoMaster，所以多个 Session 指的是相同的数据库连接。
-        daoMaster = new DaoMaster(db);
-        daoSession = daoMaster.newSession();
-    }
+//    private void setupDatabase() {
+//        // 通过 DaoMaster 的内部类 DevOpenHelper，你可以得到一个便利的 SQLiteOpenHelper 对象。
+//        // 可能你已经注意到了，你并不需要去编写「CREATE TABLE」这样的 SQL 语句，因为 greenDAO 已经帮你做了。
+//        // 注意：默认的 DaoMaster.DevOpenHelper 会在数据库升级时，删除所有的表，意味着这将导致数据的丢失。
+//        // 所以，在正式的项目中，你还应该做一层封装，来实现数据库的安全升级。
+//        DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(this, "notes-db", null);
+//        db = helper.getWritableDatabase();
+//        // 注意：该数据库连接属于 DaoMaster，所以多个 Session 指的是相同的数据库连接。
+//        daoMaster = new DaoMaster(db);
+//        daoSession = daoMaster.newSession();
+//    }
+//
+//    private PersonInfoDao getPersonInfoDao() {
+//        return daoSession.getPersonInfoDao();
+//    }
 
-    private PersonInfoDao getPersonInfoDao() {
-        return daoSession.getPersonInfoDao();
-    }
-
-//
-//    AdapterView.OnItemSelectedListener listener = new AdapterView.OnItemSelectedListener() {
-//        @Override
-//        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//            switch (parent.getId()) {
-//                case R.id.sex:
-//                    Log.e("dddd", "ddddddddddddddddddddddddddddddddddddddddddddd" + position);
-//                    break;
-//                case R.id.education:
-//                    Log.e("dddd", "ddddddddddddddddddddddddddddddddddddddddddddd" + position);
-//                    break;
-//                case R.id.occupation:
-//                    Log.e("dddd", "ddddddddddddddddddddddddddddddddddddddddddddd" + position);
-//                    break;
-//                case R.id.marriage:
-//                    break;
-//                case R.id.payment:
-//                    break;
-//                case R.id.home:
-//                    break;
-//                case R.id.economy:
-//                    break;
-//                case R.id.oldhelp:
-//                    break;
-//            }
-//        }
-//
-//        @Override
-//        public void onNothingSelected(AdapterView<?> parent) {
-//
-//        }
-//    };
 
 
     public void showDatePickerDialog(View v) {

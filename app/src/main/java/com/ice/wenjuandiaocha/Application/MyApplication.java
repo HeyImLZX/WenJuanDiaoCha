@@ -4,10 +4,15 @@ import android.app.Application;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.ice.greendao.DaoMaster;
 import com.ice.greendao.DaoSession;
 import com.ice.greendao.PersonInfoDao;
+import com.ice.greendao.QuestionResult;
+import com.ice.greendao.QuestionResultDao;
+import com.ice.greendao.SimpleInfo;
+import com.ice.greendao.SimpleInfoDao;
 
 /**
  * Created by ice on 2016/3/12.
@@ -56,9 +61,34 @@ public class MyApplication extends Application {
         return daoSession.getPersonInfoDao();
     }
 
+    public static SimpleInfoDao getSimpleInfoDao() {
+        return daoSession.getSimpleInfoDao();
+    }
+
+    public static QuestionResultDao getQuestionResultDao() {
+        return daoSession.getQuestionResultDao();
+    }
+
     public static Cursor getCursor() {
         return cursor;
     }
 
+
+    public static void insertDao(String timeStamp, String personId, String tableId, String blank, String result, String score, String TAG) {
+
+
+        // 插入操作，简单到只要你创建一个 Java 对象
+        QuestionResult questionResult = new QuestionResult(null
+                , timeStamp
+                , personId
+                , tableId
+                , blank
+                , result
+                , score
+        );
+        getQuestionResultDao().insert(questionResult);
+        Log.d(TAG, "Inserted new note, ID: " + questionResult.getId());
+        //   cursor.requery();
+    }
 
 }

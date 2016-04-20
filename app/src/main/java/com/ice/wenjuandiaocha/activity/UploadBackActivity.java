@@ -15,21 +15,28 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.google.gson.Gson;
+
 import com.ice.greendao.PersonInfo;
+import com.ice.greendao.PersonInfoDao;
+import com.ice.greendao.QuestionResult;
+import com.ice.greendao.QuestionResultDao;
+import com.ice.greendao.SimpleInfo;
 import com.ice.wenjuandiaocha.Application.MyApplication;
 import com.ice.wenjuandiaocha.R;
 import com.ice.wenjuandiaocha.base.BaseBackActivity;
-import com.ice.wenjuandiaocha.base.BaseBackActivity;
+import com.ice.wenjuandiaocha.tool.UpdateBean;
 import com.ice.wenjuandiaocha.tool.VolleySingleton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import de.greenrobot.dao.query.QueryBuilder;
 
 public class UploadBackActivity extends BaseBackActivity {
 
@@ -44,11 +51,12 @@ public class UploadBackActivity extends BaseBackActivity {
     TextView dataNum;
     @Bind(R.id.status)
     TextView status;
-    List<PersonInfo> personInfos;
+    ArrayList<UpdateBean> updateBeans = new ArrayList<>();
     private RequestQueue mQueue;
     private Cursor cursor;
     private String targetIp;
     private String jsonStr;
+    List<SimpleInfo> simpleInfos = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,11 +68,67 @@ public class UploadBackActivity extends BaseBackActivity {
 
         mQueue = VolleySingleton.getInstance(getApplicationContext()).getRequestQueue();
 
-        personInfos = getAllPerson();
-        dataNum.setText("未上传记录数目：" + personInfos.size());
+        simpleInfos = getAllSimpleInfo();//先获取SimpleInfo，代表有问卷没上传
+        //然后根据simpleinfo中的问卷号，查找具体问卷答案列表   根据personID查找用户信息
+
+        for (SimpleInfo simpleInfo : simpleInfos
+                ) {
+            UpdateBean updateBean = new UpdateBean();
+
+            String personId = simpleInfo.getPersonId();
+            String questionId = simpleInfo.getQuestionId();
+
+            // MyApplication.getPersonInfoDao().load("personId");
+
+            QueryBuilder qb = MyApplication.getPersonInfoDao().queryBuilder();
+            qb.where(PersonInfoDao.Properties.PersonId.eq(personId));
+
+            QueryBuilder qb2 = MyApplication.getQuestionResultDao().queryBuilder();
+            qb2.where(QuestionResultDao.Properties.QuestionId.eq(questionId));
+            List<QuestionResult> questionList = qb2.list();
+            for (QuestionResult questionResult :
+                    questionList) {
+
+                updateBean.addQuestionResults(questionResult);
+            }
+
+            updateBean.setPersonInfo((PersonInfo) qb.list().get(0));
+            updateBean.setSimpleInfo(simpleInfo);
+
+            updateBeans.add(updateBean);
+
+        }
+
+        /////////////////////////////////////////////////////////
+/*
+        UpdateBean updateBean = new UpdateBean();
+
+
+        PersonInfo personInfo = new PersonInfo((long) 2, "123", "a", "aa", "aaa", "b", "bb", "bbb", "bbbb", "c", "cc", "ccc", "cccc", "d", "dd", "ddd", "ddd", "ddd", "ddd", "ddd", "ddd");
+       // SimpleInfo simpleInfo = new SimpleInfo((long) 3, "123", "sd", "sds", "dasda", "12314", "123", "sd", "sds", "dasda", "12314", "123", "sd", "sds", "dasda", "12314", "123", "sd", "sds", "dasda", "12314", "123", "sd", "sds", "dasda", "12314", "123", "sd", "sds", "dasda", "12314", "123", "sd", "sds", "dasda", "12314", "123", "sd", "sds", "dasda", "12314", "sd", "sd");
+        QuestionResult questionResult = new QuestionResult((long) 3, "123", "sd", "sds", "dasda", "12314", "23");
+        QuestionResult questionResult2 = new QuestionResult((long) 4, "123", "s5d", "sd5s", "dasd5a", "125314", "253");
+
+
+        updateBean.setPersonInfo(personInfo);
+   //     updateBean.setSimpleInfo(simpleInfo);
+        updateBean.addQuestionResults(questionResult);
+        updateBean.addQuestionResults(questionResult2);
+
+
+        UpdateBean updateBean2 = new UpdateBean();
+        updateBean2.setPersonInfo(personInfo);
+    //    updateBean2.setSimpleInfo(simpleInfo);
+        updateBean2.addQuestionResults(questionResult);
+        updateBean2.addQuestionResults(questionResult2);
+
+        updateBeans.add(updateBean);
+        updateBeans.add(updateBean2);*/
+        ////////////////////////////////////////////////////////////////////
+        dataNum.setText("未上传记录数目：" + updateBeans.size());
 
         Gson gson = new Gson();
-        jsonStr = gson.toJson(personInfos);
+        jsonStr = gson.toJson(updateBeans);
         Log.e("SSS", jsonStr);
 
     }
@@ -73,11 +137,15 @@ public class UploadBackActivity extends BaseBackActivity {
         return MyApplication.getPersonInfoDao().loadAll();// 获取图片相册
     }
 
+    public List<SimpleInfo> getAllSimpleInfo() {
+        return MyApplication.getSimpleInfoDao().loadAll();// 获取图片相册
+    }
+
     @OnClick({R.id.upload, R.id.connect})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.upload:
-                if (personInfos.size() < 0)
+                if (updateBeans.size() < 0)
                     Toast.makeText(UploadBackActivity.this, "无新纪录上传", Toast.LENGTH_SHORT).show();
                 else {
                     targetIp = ipText.getEditText().getText().toString();
@@ -101,7 +169,7 @@ public class UploadBackActivity extends BaseBackActivity {
         }
 
 //        Log.d("TAG", params.toString());
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, "http://" + targetIp, params, new Response.Listener<JSONArray>() {
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, targetIp, params, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
                 Log.d("TAG", response.toString());

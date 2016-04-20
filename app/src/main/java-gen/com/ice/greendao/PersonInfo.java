@@ -7,10 +7,9 @@ package com.ice.greendao;
 public class PersonInfo {
 
     private Long id;
-    /**
-     * Not-null value.
-     */
+    /** Not-null value. */
     private String name;
+    private String questionId;
     private String sex;
     private String birthday;
     private String height;
@@ -18,7 +17,7 @@ public class PersonInfo {
     private String provider;
     private String relation;
     private String religion;
-    private String idcard;
+    private String personId;
     private String education;
     private String occupation;
     private String marriage;
@@ -37,9 +36,10 @@ public class PersonInfo {
         this.id = id;
     }
 
-    public PersonInfo(Long id, String name, String sex, String birthday, String height, String weight, String provider, String relation, String religion, String idcard, String education, String occupation, String marriage, String payment, String home, String economy, String oldhelp, String accident, String wish1, String wish2) {
+    public PersonInfo(Long id, String name, String questionId, String sex, String birthday, String height, String weight, String provider, String relation, String religion, String personId, String education, String occupation, String marriage, String payment, String home, String economy, String oldhelp, String accident, String wish1, String wish2) {
         this.id = id;
         this.name = name;
+        this.questionId = questionId;
         this.sex = sex;
         this.birthday = birthday;
         this.height = height;
@@ -47,7 +47,7 @@ public class PersonInfo {
         this.provider = provider;
         this.relation = relation;
         this.religion = religion;
-        this.idcard = idcard;
+        this.personId = personId;
         this.education = education;
         this.occupation = occupation;
         this.marriage = marriage;
@@ -76,6 +76,14 @@ public class PersonInfo {
     /** Not-null value; ensure this value is available before it is saved to the database. */
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getQuestionId() {
+        return questionId;
+    }
+
+    public void setQuestionId(String questionId) {
+        this.questionId = questionId;
     }
 
     public String getSex() {
@@ -134,12 +142,12 @@ public class PersonInfo {
         this.religion = religion;
     }
 
-    public String getIdcard() {
-        return idcard;
+    public String getPersonId() {
+        return personId;
     }
 
-    public void setIdcard(String idcard) {
-        this.idcard = idcard;
+    public void setPersonId(String personId) {
+        this.personId = personId;
     }
 
     public String getEducation() {

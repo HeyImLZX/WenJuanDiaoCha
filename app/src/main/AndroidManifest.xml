@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".Application.MyApplication"
@@ -48,7 +49,8 @@
         <activity android:name=".activity.PSQIActivity" />
         <activity android:name=".activity.MiniCogActivity" />
         <activity android:name=".activity.MMSEActivity" />
-        <activity android:name=".activity.TinettiActivity"></activity>
+        <activity android:name=".activity.TinettiActivity" />
+        <activity android:name=".activity.HISActivity"></activity>
     </application>
 
 </manifest>

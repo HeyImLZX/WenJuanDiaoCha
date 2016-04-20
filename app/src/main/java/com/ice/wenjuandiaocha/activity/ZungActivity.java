@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 
+import com.ice.wenjuandiaocha.Application.MyApplication;
 import com.ice.wenjuandiaocha.R;
 import com.ice.wenjuandiaocha.util.FourRadioGroup;
 
@@ -16,7 +17,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class ZungActivity extends AppCompatActivity {
-
+    private static final String TAG = "ZungActivity";
     @Bind(R.id.group1)
     FourRadioGroup group1;
     @Bind(R.id.group2)
@@ -68,6 +69,10 @@ public class ZungActivity extends AppCompatActivity {
     @Bind(R.id.score)
     EditText score;
 
+    String timeStamp = "2798";
+    String personId = "2798";
+    String tableId = "12";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +80,11 @@ public class ZungActivity extends AppCompatActivity {
         setContentView(R.layout.activity_zung);
         ButterKnife.bind(this);
 
+
+        if (getIntent().getExtras() != null) {
+            timeStamp = getIntent().getExtras().getString("timeStamp");
+            personId = getIntent().getExtras().getString("personId");
+        }
 
         groupList.add(group1);
         groupList.add(group2);
@@ -104,6 +114,7 @@ public class ZungActivity extends AppCompatActivity {
 
         if (isScored)//分数计算完成
         {
+            setResult(RESULT_OK, getIntent());
             finish();
         } else {
 
@@ -123,7 +134,7 @@ public class ZungActivity extends AppCompatActivity {
             isScored = true;
             System.out.println(resultSb.toString());
             System.out.println((int) (scoreValue * 1.25));
-
+            MyApplication.insertDao(timeStamp, personId, tableId, "", resultSb.toString(), String.valueOf(scoreValue), TAG);
         }
 
     }
