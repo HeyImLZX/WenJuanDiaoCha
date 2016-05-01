@@ -1,5 +1,6 @@
 package com.ice.wenjuandiaocha.activity;
 
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
@@ -57,6 +58,8 @@ public class UploadBackActivity extends BaseBackActivity {
     private String targetIp;
     private String jsonStr;
     List<SimpleInfo> simpleInfos = new ArrayList<>();
+
+    SharedPreferences sp = getSharedPreferences("WenJuan",MODE_PRIVATE);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -148,7 +151,7 @@ public class UploadBackActivity extends BaseBackActivity {
                 if (updateBeans.size() < 0)
                     Toast.makeText(UploadBackActivity.this, "无新纪录上传", Toast.LENGTH_SHORT).show();
                 else {
-                    targetIp = ipText.getEditText().getText().toString();
+                    targetIp = "http://"+ipText.getEditText().getText().toString();
                     sendSimplePost(jsonStr, targetIp, "上传成功", "上传失败", VOLLEY_TAG, true);
                 }
                 break;
@@ -157,7 +160,7 @@ public class UploadBackActivity extends BaseBackActivity {
         }
     }
 
-
+//"http://192.168.100.134:8821"
     public void sendSimplePost(String str, String targetIp, final String successText, final String failText, String VOLLEY_TAG, final boolean flag) {
 
 
@@ -169,7 +172,7 @@ public class UploadBackActivity extends BaseBackActivity {
         }
 
 //        Log.d("TAG", params.toString());
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, targetIp, params, new Response.Listener<JSONArray>() {
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, "http://192.168.100.134:8080/ServerJsonDemo/servlet/AddServlet", params, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
                 Log.d("TAG", response.toString());
