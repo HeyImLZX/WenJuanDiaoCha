@@ -556,6 +556,7 @@ public class SimpleInfoBackActivity extends BaseBackActivity {
                 , nineteenTwo.isChecked()
                 , twentyOne.isChecked()
                 , twentyTwo.isChecked()
+                ,false
 
         );
         MyApplication.getSimpleInfoDao().insert(simpleInfo);

@@ -15,6 +15,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.google.gson.Gson;
 
 import com.ice.greendao.PersonInfo;
@@ -22,14 +23,17 @@ import com.ice.greendao.PersonInfoDao;
 import com.ice.greendao.QuestionResult;
 import com.ice.greendao.QuestionResultDao;
 import com.ice.greendao.SimpleInfo;
+import com.ice.greendao.SimpleInfoDao;
 import com.ice.wenjuandiaocha.Application.MyApplication;
 import com.ice.wenjuandiaocha.R;
 import com.ice.wenjuandiaocha.base.BaseBackActivity;
 import com.ice.wenjuandiaocha.tool.UpdateBean;
 import com.ice.wenjuandiaocha.tool.VolleySingleton;
+import com.ice.wenjuandiaocha.util.MyJsonObjectRequest;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,7 +63,8 @@ public class UploadBackActivity extends BaseBackActivity {
     private String jsonStr;
     List<SimpleInfo> simpleInfos = new ArrayList<>();
 
-    SharedPreferences sp = getSharedPreferences("WenJuan",MODE_PRIVATE);
+    SharedPreferences sp;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,15 +72,20 @@ public class UploadBackActivity extends BaseBackActivity {
         setContentView(R.layout.activity_upload);
         ButterKnife.bind(this);
 
+        sp = getSharedPreferences("WenJuan", MODE_PRIVATE);
+        editor = sp.edit();//获取编辑器
+
+        ipText.getEditText().setText(sp.getString("ip", ""));
+
+
         setTitle("上传");
 
         mQueue = VolleySingleton.getInstance(getApplicationContext()).getRequestQueue();
 
-        simpleInfos = getAllSimpleInfo();//先获取SimpleInfo，代表有问卷没上传
+        simpleInfos = getNotUploadSimpleInfo();//先获取SimpleInfo，代表有问卷没上传
         //然后根据simpleinfo中的问卷号，查找具体问卷答案列表   根据personID查找用户信息
 
-        for (SimpleInfo simpleInfo : simpleInfos
-                ) {
+        for (SimpleInfo simpleInfo : simpleInfos) {
             UpdateBean updateBean = new UpdateBean();
 
             String personId = simpleInfo.getPersonId();
@@ -88,6 +98,7 @@ public class UploadBackActivity extends BaseBackActivity {
 
             QueryBuilder qb2 = MyApplication.getQuestionResultDao().queryBuilder();
             qb2.where(QuestionResultDao.Properties.QuestionId.eq(questionId));
+
             List<QuestionResult> questionList = qb2.list();
             for (QuestionResult questionResult :
                     questionList) {
@@ -102,32 +113,6 @@ public class UploadBackActivity extends BaseBackActivity {
 
         }
 
-        /////////////////////////////////////////////////////////
-/*
-        UpdateBean updateBean = new UpdateBean();
-
-
-        PersonInfo personInfo = new PersonInfo((long) 2, "123", "a", "aa", "aaa", "b", "bb", "bbb", "bbbb", "c", "cc", "ccc", "cccc", "d", "dd", "ddd", "ddd", "ddd", "ddd", "ddd", "ddd");
-       // SimpleInfo simpleInfo = new SimpleInfo((long) 3, "123", "sd", "sds", "dasda", "12314", "123", "sd", "sds", "dasda", "12314", "123", "sd", "sds", "dasda", "12314", "123", "sd", "sds", "dasda", "12314", "123", "sd", "sds", "dasda", "12314", "123", "sd", "sds", "dasda", "12314", "123", "sd", "sds", "dasda", "12314", "123", "sd", "sds", "dasda", "12314", "sd", "sd");
-        QuestionResult questionResult = new QuestionResult((long) 3, "123", "sd", "sds", "dasda", "12314", "23");
-        QuestionResult questionResult2 = new QuestionResult((long) 4, "123", "s5d", "sd5s", "dasd5a", "125314", "253");
-
-
-        updateBean.setPersonInfo(personInfo);
-   //     updateBean.setSimpleInfo(simpleInfo);
-        updateBean.addQuestionResults(questionResult);
-        updateBean.addQuestionResults(questionResult2);
-
-
-        UpdateBean updateBean2 = new UpdateBean();
-        updateBean2.setPersonInfo(personInfo);
-    //    updateBean2.setSimpleInfo(simpleInfo);
-        updateBean2.addQuestionResults(questionResult);
-        updateBean2.addQuestionResults(questionResult2);
-
-        updateBeans.add(updateBean);
-        updateBeans.add(updateBean2);*/
-        ////////////////////////////////////////////////////////////////////
         dataNum.setText("未上传记录数目：" + updateBeans.size());
 
         Gson gson = new Gson();
@@ -137,12 +122,20 @@ public class UploadBackActivity extends BaseBackActivity {
     }
 
     public List<PersonInfo> getAllPerson() {
-        return MyApplication.getPersonInfoDao().loadAll();// 获取图片相册
+        return MyApplication.getPersonInfoDao().loadAll();//
     }
 
     public List<SimpleInfo> getAllSimpleInfo() {
-        return MyApplication.getSimpleInfoDao().loadAll();// 获取图片相册
+        return MyApplication.getSimpleInfoDao().loadAll();//
     }
+
+    public List<SimpleInfo> getNotUploadSimpleInfo() {
+        QueryBuilder qb = MyApplication.getSimpleInfoDao().queryBuilder();
+        qb.where(SimpleInfoDao.Properties.Upload.eq(false));
+
+        return qb.list();//
+    }
+
 
     @OnClick({R.id.upload, R.id.connect})
     public void onClick(View view) {
@@ -151,7 +144,9 @@ public class UploadBackActivity extends BaseBackActivity {
                 if (updateBeans.size() < 0)
                     Toast.makeText(UploadBackActivity.this, "无新纪录上传", Toast.LENGTH_SHORT).show();
                 else {
-                    targetIp = "http://"+ipText.getEditText().getText().toString();
+                    editor.putString("ip", ipText.getEditText().getText().toString());
+                    editor.commit();
+                    targetIp = "http://" + ipText.getEditText().getText().toString();
                     sendSimplePost(jsonStr, targetIp, "上传成功", "上传失败", VOLLEY_TAG, true);
                 }
                 break;
@@ -160,7 +155,7 @@ public class UploadBackActivity extends BaseBackActivity {
         }
     }
 
-//"http://192.168.100.134:8821"
+    //"http://192.168.100.134:8821"
     public void sendSimplePost(String str, String targetIp, final String successText, final String failText, String VOLLEY_TAG, final boolean flag) {
 
 
@@ -172,36 +167,51 @@ public class UploadBackActivity extends BaseBackActivity {
         }
 
 //        Log.d("TAG", params.toString());
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.POST, "http://192.168.100.134:8080/ServerJsonDemo/servlet/AddServlet", params, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
-                Log.d("TAG", response.toString());
-//                try {
-//
-////                    JSONObject jsonObject = new JSONObject(response);
-////
-////                    String resp = jsonObject.getString("resp");
-////                    if (flag) {
-////                        if (resp.equals("Success")) {
-////                            Toast.makeText(MyApplication.getContext(), successText, Toast.LENGTH_SHORT).show();
-////                        } else {
-////                            Toast.makeText(MyApplication.getContext(), failText, Toast.LENGTH_SHORT).show();
-////                        }
-////                    }
-//
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
+        MyJsonObjectRequest jsonObjectRequest = new MyJsonObjectRequest(Request.Method.POST, "http://192.168.100.134:8080/ServerJsonDemo/servlet/AddServlet", params,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.d("TAG", response.toString());
+                        try {
 
-            }
-        }, new Response.ErrorListener() {
+                            String resp = response.getString("resp");
+                            if (flag) {
+                                if (resp.equals("Success")) {
+                                    Toast.makeText(MyApplication.getContext(), successText, Toast.LENGTH_SHORT).show();
+                                    ChangeDaoTrue();
+                                } else {
+                                    Toast.makeText(MyApplication.getContext(), failText, Toast.LENGTH_SHORT).show();
+                                }
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.e("TAG", error.getMessage(), error);
+                Toast.makeText(MyApplication.getContext(), "网络连接失败", Toast.LENGTH_SHORT).show();
             }
         });
-        jsonArrayRequest.setTag(VOLLEY_TAG);
-        mQueue.add(jsonArrayRequest);
+        jsonObjectRequest.setTag(VOLLEY_TAG);
+        mQueue.add(jsonObjectRequest)
+        ;
+    }
+
+    private void ChangeDaoTrue() {
+
+        for (SimpleInfo simpleInfo : simpleInfos) {
+            simpleInfo.setUpload(true);
+
+            MyApplication.getSimpleInfoDao().update(simpleInfo);
+
+
+
+
+        }
     }
 
 

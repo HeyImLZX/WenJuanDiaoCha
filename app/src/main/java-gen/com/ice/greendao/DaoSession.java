@@ -55,7 +55,7 @@ public class DaoSession extends AbstractDaoSession {
         registerDao(SimpleInfo.class, simpleInfoDao);
         registerDao(QuestionResult.class, questionResultDao);
     }
-
+    
     public void clear() {
         personInfoDaoConfig.getIdentityScope().clear();
         simpleInfoDaoConfig.getIdentityScope().clear();

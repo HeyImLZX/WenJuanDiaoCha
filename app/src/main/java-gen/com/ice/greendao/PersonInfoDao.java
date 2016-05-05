@@ -32,18 +32,19 @@ public class PersonInfoDao extends AbstractDao<PersonInfo, Long> {
         public final static Property Weight = new Property(6, String.class, "weight", false, "WEIGHT");
         public final static Property Provider = new Property(7, String.class, "provider", false, "PROVIDER");
         public final static Property Relation = new Property(8, String.class, "relation", false, "RELATION");
-        public final static Property Religion = new Property(9, String.class, "religion", false, "RELIGION");
-        public final static Property PersonId = new Property(10, String.class, "personId", false, "PERSON_ID");
-        public final static Property Education = new Property(11, String.class, "education", false, "EDUCATION");
-        public final static Property Occupation = new Property(12, String.class, "occupation", false, "OCCUPATION");
-        public final static Property Marriage = new Property(13, String.class, "marriage", false, "MARRIAGE");
-        public final static Property Payment = new Property(14, String.class, "payment", false, "PAYMENT");
-        public final static Property Home = new Property(15, String.class, "home", false, "HOME");
-        public final static Property Economy = new Property(16, String.class, "economy", false, "ECONOMY");
-        public final static Property Oldhelp = new Property(17, String.class, "oldhelp", false, "OLDHELP");
-        public final static Property Accident = new Property(18, String.class, "accident", false, "ACCIDENT");
-        public final static Property Wish1 = new Property(19, String.class, "wish1", false, "WISH1");
-        public final static Property Wish2 = new Property(20, String.class, "wish2", false, "WISH2");
+        public final static Property Age = new Property(9, String.class, "age", false, "AGE");
+        public final static Property Religion = new Property(10, String.class, "religion", false, "RELIGION");
+        public final static Property PersonId = new Property(11, String.class, "personId", false, "PERSON_ID");
+        public final static Property Education = new Property(12, String.class, "education", false, "EDUCATION");
+        public final static Property Occupation = new Property(13, String.class, "occupation", false, "OCCUPATION");
+        public final static Property Marriage = new Property(14, String.class, "marriage", false, "MARRIAGE");
+        public final static Property Payment = new Property(15, String.class, "payment", false, "PAYMENT");
+        public final static Property Home = new Property(16, String.class, "home", false, "HOME");
+        public final static Property Economy = new Property(17, String.class, "economy", false, "ECONOMY");
+        public final static Property Oldhelp = new Property(18, String.class, "oldhelp", false, "OLDHELP");
+        public final static Property Accident = new Property(19, String.class, "accident", false, "ACCIDENT");
+        public final static Property Wish1 = new Property(20, String.class, "wish1", false, "WISH1");
+        public final static Property Wish2 = new Property(21, String.class, "wish2", false, "WISH2");
     };
 
 
@@ -68,18 +69,19 @@ public class PersonInfoDao extends AbstractDao<PersonInfo, Long> {
                 "\"WEIGHT\" TEXT," + // 6: weight
                 "\"PROVIDER\" TEXT," + // 7: provider
                 "\"RELATION\" TEXT," + // 8: relation
-                "\"RELIGION\" TEXT," + // 9: religion
-                "\"PERSON_ID\" TEXT," + // 10: personId
-                "\"EDUCATION\" TEXT," + // 11: education
-                "\"OCCUPATION\" TEXT," + // 12: occupation
-                "\"MARRIAGE\" TEXT," + // 13: marriage
-                "\"PAYMENT\" TEXT," + // 14: payment
-                "\"HOME\" TEXT," + // 15: home
-                "\"ECONOMY\" TEXT," + // 16: economy
-                "\"OLDHELP\" TEXT," + // 17: oldhelp
-                "\"ACCIDENT\" TEXT," + // 18: accident
-                "\"WISH1\" TEXT," + // 19: wish1
-                "\"WISH2\" TEXT);"); // 20: wish2
+                "\"AGE\" TEXT," + // 9: age
+                "\"RELIGION\" TEXT," + // 10: religion
+                "\"PERSON_ID\" TEXT NOT NULL UNIQUE ," + // 11: personId
+                "\"EDUCATION\" TEXT," + // 12: education
+                "\"OCCUPATION\" TEXT," + // 13: occupation
+                "\"MARRIAGE\" TEXT," + // 14: marriage
+                "\"PAYMENT\" TEXT," + // 15: payment
+                "\"HOME\" TEXT," + // 16: home
+                "\"ECONOMY\" TEXT," + // 17: economy
+                "\"OLDHELP\" TEXT," + // 18: oldhelp
+                "\"ACCIDENT\" TEXT," + // 19: accident
+                "\"WISH1\" TEXT," + // 20: wish1
+                "\"WISH2\" TEXT);"); // 21: wish2
     }
 
     /** Drops the underlying database table. */
@@ -134,64 +136,65 @@ public class PersonInfoDao extends AbstractDao<PersonInfo, Long> {
             stmt.bindString(9, relation);
         }
  
-        String religion = entity.getReligion();
-        if (religion != null) {
-            stmt.bindString(10, religion);
+        String age = entity.getAge();
+        if (age != null) {
+            stmt.bindString(10, age);
         }
  
-        String personId = entity.getPersonId();
-        if (personId != null) {
-            stmt.bindString(11, personId);
+        String religion = entity.getReligion();
+        if (religion != null) {
+            stmt.bindString(11, religion);
         }
+        stmt.bindString(12, entity.getPersonId());
  
         String education = entity.getEducation();
         if (education != null) {
-            stmt.bindString(12, education);
+            stmt.bindString(13, education);
         }
  
         String occupation = entity.getOccupation();
         if (occupation != null) {
-            stmt.bindString(13, occupation);
+            stmt.bindString(14, occupation);
         }
  
         String marriage = entity.getMarriage();
         if (marriage != null) {
-            stmt.bindString(14, marriage);
+            stmt.bindString(15, marriage);
         }
  
         String payment = entity.getPayment();
         if (payment != null) {
-            stmt.bindString(15, payment);
+            stmt.bindString(16, payment);
         }
  
         String home = entity.getHome();
         if (home != null) {
-            stmt.bindString(16, home);
+            stmt.bindString(17, home);
         }
  
         String economy = entity.getEconomy();
         if (economy != null) {
-            stmt.bindString(17, economy);
+            stmt.bindString(18, economy);
         }
  
         String oldhelp = entity.getOldhelp();
         if (oldhelp != null) {
-            stmt.bindString(18, oldhelp);
+            stmt.bindString(19, oldhelp);
         }
  
         String accident = entity.getAccident();
         if (accident != null) {
-            stmt.bindString(19, accident);
+            stmt.bindString(20, accident);
         }
  
         String wish1 = entity.getWish1();
         if (wish1 != null) {
-            stmt.bindString(20, wish1);
+            stmt.bindString(21, wish1);
         }
  
         String wish2 = entity.getWish2();
         if (wish2 != null) {
-            stmt.bindString(21, wish2);
+            stmt.bindString(22, wish2);
         }
     }
 
@@ -214,18 +217,19 @@ public class PersonInfoDao extends AbstractDao<PersonInfo, Long> {
             cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6), // weight
             cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7), // provider
             cursor.isNull(offset + 8) ? null : cursor.getString(offset + 8), // relation
-            cursor.isNull(offset + 9) ? null : cursor.getString(offset + 9), // religion
-            cursor.isNull(offset + 10) ? null : cursor.getString(offset + 10), // personId
-            cursor.isNull(offset + 11) ? null : cursor.getString(offset + 11), // education
-            cursor.isNull(offset + 12) ? null : cursor.getString(offset + 12), // occupation
-            cursor.isNull(offset + 13) ? null : cursor.getString(offset + 13), // marriage
-            cursor.isNull(offset + 14) ? null : cursor.getString(offset + 14), // payment
-            cursor.isNull(offset + 15) ? null : cursor.getString(offset + 15), // home
-            cursor.isNull(offset + 16) ? null : cursor.getString(offset + 16), // economy
-            cursor.isNull(offset + 17) ? null : cursor.getString(offset + 17), // oldhelp
-            cursor.isNull(offset + 18) ? null : cursor.getString(offset + 18), // accident
-            cursor.isNull(offset + 19) ? null : cursor.getString(offset + 19), // wish1
-            cursor.isNull(offset + 20) ? null : cursor.getString(offset + 20) // wish2
+            cursor.isNull(offset + 9) ? null : cursor.getString(offset + 9), // age
+            cursor.isNull(offset + 10) ? null : cursor.getString(offset + 10), // religion
+            cursor.getString(offset + 11), // personId
+            cursor.isNull(offset + 12) ? null : cursor.getString(offset + 12), // education
+            cursor.isNull(offset + 13) ? null : cursor.getString(offset + 13), // occupation
+            cursor.isNull(offset + 14) ? null : cursor.getString(offset + 14), // marriage
+            cursor.isNull(offset + 15) ? null : cursor.getString(offset + 15), // payment
+            cursor.isNull(offset + 16) ? null : cursor.getString(offset + 16), // home
+            cursor.isNull(offset + 17) ? null : cursor.getString(offset + 17), // economy
+            cursor.isNull(offset + 18) ? null : cursor.getString(offset + 18), // oldhelp
+            cursor.isNull(offset + 19) ? null : cursor.getString(offset + 19), // accident
+            cursor.isNull(offset + 20) ? null : cursor.getString(offset + 20), // wish1
+            cursor.isNull(offset + 21) ? null : cursor.getString(offset + 21) // wish2
         );
         return entity;
     }
@@ -242,18 +246,19 @@ public class PersonInfoDao extends AbstractDao<PersonInfo, Long> {
         entity.setWeight(cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6));
         entity.setProvider(cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7));
         entity.setRelation(cursor.isNull(offset + 8) ? null : cursor.getString(offset + 8));
-        entity.setReligion(cursor.isNull(offset + 9) ? null : cursor.getString(offset + 9));
-        entity.setPersonId(cursor.isNull(offset + 10) ? null : cursor.getString(offset + 10));
-        entity.setEducation(cursor.isNull(offset + 11) ? null : cursor.getString(offset + 11));
-        entity.setOccupation(cursor.isNull(offset + 12) ? null : cursor.getString(offset + 12));
-        entity.setMarriage(cursor.isNull(offset + 13) ? null : cursor.getString(offset + 13));
-        entity.setPayment(cursor.isNull(offset + 14) ? null : cursor.getString(offset + 14));
-        entity.setHome(cursor.isNull(offset + 15) ? null : cursor.getString(offset + 15));
-        entity.setEconomy(cursor.isNull(offset + 16) ? null : cursor.getString(offset + 16));
-        entity.setOldhelp(cursor.isNull(offset + 17) ? null : cursor.getString(offset + 17));
-        entity.setAccident(cursor.isNull(offset + 18) ? null : cursor.getString(offset + 18));
-        entity.setWish1(cursor.isNull(offset + 19) ? null : cursor.getString(offset + 19));
-        entity.setWish2(cursor.isNull(offset + 20) ? null : cursor.getString(offset + 20));
+        entity.setAge(cursor.isNull(offset + 9) ? null : cursor.getString(offset + 9));
+        entity.setReligion(cursor.isNull(offset + 10) ? null : cursor.getString(offset + 10));
+        entity.setPersonId(cursor.getString(offset + 11));
+        entity.setEducation(cursor.isNull(offset + 12) ? null : cursor.getString(offset + 12));
+        entity.setOccupation(cursor.isNull(offset + 13) ? null : cursor.getString(offset + 13));
+        entity.setMarriage(cursor.isNull(offset + 14) ? null : cursor.getString(offset + 14));
+        entity.setPayment(cursor.isNull(offset + 15) ? null : cursor.getString(offset + 15));
+        entity.setHome(cursor.isNull(offset + 16) ? null : cursor.getString(offset + 16));
+        entity.setEconomy(cursor.isNull(offset + 17) ? null : cursor.getString(offset + 17));
+        entity.setOldhelp(cursor.isNull(offset + 18) ? null : cursor.getString(offset + 18));
+        entity.setAccident(cursor.isNull(offset + 19) ? null : cursor.getString(offset + 19));
+        entity.setWish1(cursor.isNull(offset + 20) ? null : cursor.getString(offset + 20));
+        entity.setWish2(cursor.isNull(offset + 21) ? null : cursor.getString(offset + 21));
      }
     
     /** @inheritdoc */

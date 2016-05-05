@@ -146,6 +146,7 @@
             android:id="@+id/idcard"
             android:layout_width="600dp"
             android:inputType="number"
+            android:digits="0123456789X"
             android:layout_height="wrap_content" />
 
         <TextView

@@ -79,6 +79,14 @@ public class PersonInfoBackActivity extends BaseBackActivity implements DatePick
 
 
     long timeStamp = 0;
+    private ArrayAdapter<CharSequence> sexAdapter;
+    private ArrayAdapter<CharSequence> educationAdapter;
+    private ArrayAdapter<CharSequence> occupationAdapter;
+    private ArrayAdapter<CharSequence> marriageAdapter;
+    private ArrayAdapter<CharSequence> paymentAdapter;
+    private ArrayAdapter<CharSequence> homeAdapter;
+    private ArrayAdapter<CharSequence> economyAdapter;
+    private ArrayAdapter<CharSequence> oldhelpAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,48 +96,62 @@ public class PersonInfoBackActivity extends BaseBackActivity implements DatePick
 
         setTitle("基本信息");
 
+
+
 //        cursor = db.query(getPersonInfoDao().getTablename(), getPersonInfoDao().getAllColumns(), null, null, null, null, null);
 
 
-        ArrayAdapter<CharSequence> sexAdapter = ArrayAdapter.createFromResource(this,
+        sexAdapter = ArrayAdapter.createFromResource(this,
                 R.array.sex_array, android.R.layout.simple_spinner_item);
         sexAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sex.setAdapter(sexAdapter);
 
-        ArrayAdapter<CharSequence> educationAdapter = ArrayAdapter.createFromResource(this,
+        educationAdapter = ArrayAdapter.createFromResource(this,
                 R.array.education_array, android.R.layout.simple_spinner_item);
         educationAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         education.setAdapter(educationAdapter);
 
-        ArrayAdapter<CharSequence> occupationAdapter = ArrayAdapter.createFromResource(this,
+        occupationAdapter = ArrayAdapter.createFromResource(this,
                 R.array.occupation_array, android.R.layout.simple_spinner_item);
         occupationAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         occupation.setAdapter(occupationAdapter);
 
-        ArrayAdapter<CharSequence> marriageAdapter = ArrayAdapter.createFromResource(this,
+        marriageAdapter = ArrayAdapter.createFromResource(this,
                 R.array.marriage_array, android.R.layout.simple_spinner_item);
         marriageAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         marriage.setAdapter(marriageAdapter);
 
-        ArrayAdapter<CharSequence> paymentAdapter = ArrayAdapter.createFromResource(this,
+        paymentAdapter = ArrayAdapter.createFromResource(this,
                 R.array.payment_array, android.R.layout.simple_spinner_item);
         paymentAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         payment.setAdapter(paymentAdapter);
 
-        ArrayAdapter<CharSequence> homeAdapter = ArrayAdapter.createFromResource(this,
+        homeAdapter = ArrayAdapter.createFromResource(this,
                 R.array.home_array, android.R.layout.simple_spinner_item);
         homeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         home.setAdapter(homeAdapter);
 
-        ArrayAdapter<CharSequence> economyAdapter = ArrayAdapter.createFromResource(this,
+        economyAdapter = ArrayAdapter.createFromResource(this,
                 R.array.economy_array, android.R.layout.simple_spinner_item);
         economyAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         economy.setAdapter(economyAdapter);
 
-        ArrayAdapter<CharSequence> oldhelpAdapter = ArrayAdapter.createFromResource(this,
+        oldhelpAdapter = ArrayAdapter.createFromResource(this,
                 R.array.oldhelp_array, android.R.layout.simple_spinner_item);
         oldhelpAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         oldhelp.setAdapter(oldhelpAdapter);
+
+
+        if (getIntent().getExtras() != null) {
+
+            if (getIntent().getExtras().getString("personId") != null) {
+                idcard.setText(getIntent().getExtras().getString("personId"));
+            } else if (getIntent().getExtras().getSerializable("personInfo") != null) {
+                PersonInfo personInfo = (PersonInfo) getIntent().getExtras().getSerializable("personInfo");
+                initOrgin(personInfo);
+            }
+        }
+
 
 
         birthday.setOnClickListener(new View.OnClickListener() {
@@ -183,6 +205,48 @@ public class PersonInfoBackActivity extends BaseBackActivity implements DatePick
         });
 
 
+    }
+
+    private void initOrgin(PersonInfo personInfo) {
+        name.setText(personInfo.getName());
+        height.setText(personInfo.getHeight());
+        weight.setText(personInfo.getWeight());
+        provider.setText(personInfo.getProvider());
+        relation.setText(personInfo.getRelation());
+        age.setText(personInfo.getAge());
+        religion.setText(personInfo.getReligion());
+        idcard.setText(personInfo.getPersonId());
+
+        birthday.setText(personInfo.getBirthday());
+
+        sex.setSelection(sexAdapter.getPosition(personInfo.getSex()));
+        education.setSelection(educationAdapter.getPosition(personInfo.getEducation()));
+        occupation.setSelection(occupationAdapter.getPosition(personInfo.getOccupation()));
+        marriage.setSelection(marriageAdapter.getPosition(personInfo.getMarriage()));
+        payment.setSelection(paymentAdapter.getPosition(personInfo.getPayment()));
+        home.setSelection(homeAdapter.getPosition(personInfo.getHome()));
+        economy.setSelection(economyAdapter.getPosition(personInfo.getEconomy()));
+        oldhelp.setSelection(oldhelpAdapter.getPosition(personInfo.getOldhelp()));
+
+        String[] accident = personInfo.getAccident().split("/");
+        for (String chose : accident) {
+            if (chose.endsWith("跌倒")) {
+                accident1.setChecked(true);
+            } else if (chose.endsWith("走失")) {
+                accident2.setChecked(true);
+            } else if (chose.endsWith("噎食、呛食")) {
+                accident3.setChecked(true);
+            } else if (chose.endsWith("自杀")) {
+                accident4.setChecked(true);
+            }
+
+        }
+
+
+        wish1.setText(personInfo.getWish1());
+        wish2.setText(personInfo.getWish2());
+
+
 
     }
 
@@ -213,11 +277,14 @@ public class PersonInfoBackActivity extends BaseBackActivity implements DatePick
         }
 
         // 插入操作，简单到只要你创建一个 Java 对象
-        PersonInfo note = new PersonInfo(null, name.getText().toString(), String.valueOf(timeStamp), sex.getSelectedItem().toString(), birthday.getText().toString()
+        PersonInfo note = new PersonInfo(null, name.getText().toString(), String.valueOf(timeStamp)
+                , sex.getSelectedItem().toString()
+                , birthday.getText().toString()
                 , height.getText().toString()
                 , weight.getText().toString()
                 , provider.getText().toString()
                 , relation.getText().toString()
+                , age.getText().toString()
                 , religion.getText().toString()
                 , idcard.getText().toString()
                 , education.getSelectedItem().toString()
@@ -230,7 +297,7 @@ public class PersonInfoBackActivity extends BaseBackActivity implements DatePick
                 , accidentResult.toString()
                 , wish1.getText().toString()
                 , wish2.getText().toString());
-        MyApplication.getPersonInfoDao().insert(note);
+        MyApplication.getPersonInfoDao().insertOrReplace(note);
         Log.d(TAG, "Inserted new note, ID: " + note.getId());
         //   cursor.requery();
     }
@@ -250,7 +317,6 @@ public class PersonInfoBackActivity extends BaseBackActivity implements DatePick
 //    private PersonInfoDao getPersonInfoDao() {
 //        return daoSession.getPersonInfoDao();
 //    }
-
 
 
     public void showDatePickerDialog(View v) {

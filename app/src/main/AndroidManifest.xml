@@ -25,6 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.PersonInfoBackActivity" />
+        <activity android:name=".activity.IDCheckBackActivity" />
         <activity android:name=".activity.SimpleInfoBackActivity" />
         <activity android:name=".activity.WaTianBackActivity" />
         <activity android:name=".activity.LoginBackActivity" />

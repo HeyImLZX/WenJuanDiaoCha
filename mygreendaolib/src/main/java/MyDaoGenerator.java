@@ -50,8 +50,11 @@ public class MyDaoGenerator {
         note.addStringProperty("weight");
         note.addStringProperty("provider");
         note.addStringProperty("relation");
+
+        note.addStringProperty("age");
+
         note.addStringProperty("religion");
-        note.addStringProperty("personId");
+        note.addStringProperty("personId").notNull().unique();
         note.addStringProperty("education");
         note.addStringProperty("occupation");
         note.addStringProperty("marriage");
@@ -115,6 +118,8 @@ public class MyDaoGenerator {
         simpleInfo.addBooleanProperty("nineteen2");
         simpleInfo.addBooleanProperty("twenty1");
         simpleInfo.addBooleanProperty("twenty2");
+
+        simpleInfo.addBooleanProperty("upload");
 
         Entity questionResult = schema.addEntity("QuestionResult");
         // 你也可以重新给表命名

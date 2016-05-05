@@ -44,7 +44,7 @@ public class MainBackActivity extends BaseActivity {
                 startActivity(intent3);
                 break;
             case R.id.invest:
-                Intent intent = new Intent(MainBackActivity.this, PersonInfoBackActivity.class);
+                Intent intent = new Intent(MainBackActivity.this, IDCheckBackActivity.class);
                 startActivity(intent);
                 break;
             case R.id.upload:
